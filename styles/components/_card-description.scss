@@ -1,0 +1,23 @@
+.cards-item__description {
+    .cards-item__tittle {
+        font-size: 22px;
+        line-height: 26px;
+        padding: 10px;
+        font-weight: 700;
+    }
+    .cards-item__conditions {
+        display: flex;
+        gap: 15px;
+        padding: 10px;
+        li {
+            font-size: 15px;
+            line-height: 18px;
+            background: #EEEEEF;
+            padding: 5px 10px;
+            border-radius: 16px;
+            .delivery {
+                width: 20px;
+            }
+        }
+    }
+}
