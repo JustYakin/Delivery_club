@@ -1,1 +1,2 @@
-import './assets/styles/_main.scss';
+import './src/components/_main.js';
+import './src/components/_main.scss';
