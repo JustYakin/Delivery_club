@@ -76,7 +76,7 @@ img {
 
 .container {
   margin: 0 auto;
-  min-width: 800px;
+  padding: 0 20px;
   max-width: 1400px;
 }
 
@@ -110,22 +110,14 @@ img {
 }
 
 .cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(258px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  grid-gap: 20px;
 }
 
 .cards-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-shadow: 0px 2px 6px -3px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 2px 6px -3px rgba(0, 0, 0, 0.15);
   -webkit-transition: -webkit-box-shadow 0.5s;
@@ -138,6 +130,15 @@ img {
   transition: transform 0.5s, -webkit-transform 0.5s;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+.cards-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .cards-item:hover {
@@ -217,17 +218,8 @@ img {
 }
 
 .like {
+  display: block;
   background: url("../image/love.png");
-  background-size: cover;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.like:hover {
-  background: url("../image/lovered.png");
   background-size: cover;
   width: 30px;
   height: 30px;
