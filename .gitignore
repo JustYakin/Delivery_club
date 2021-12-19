@@ -1,3 +1,7 @@
 /dist
 /node_modules
 package-losk.json
+.DS_Store
+        src/.DS_Store
+        src/components/.DS_Store
+        src/components/footer/.DS_Store
