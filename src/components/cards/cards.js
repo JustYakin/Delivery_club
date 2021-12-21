@@ -1,7 +1,54 @@
-const main = document.querySelector('main');
+let restaraunts = [{
+        'name': 'Мак',
+        'imgRestauran': "src/image/rest.jpg",
+        'raiting': '4.95',
+        'price': 'от 15р',
+        'time': '40-50 мин',
+        'benefit': 'Выгодно',
+
+    },
+    {
+        'name': 'Terra',
+        'imgRestauran': "src/image/rest.jpg",
+        'raiting': '4.95',
+        'price': 'от 1р',
+        'time': '30 мин',
+        'benefit': 'Выгодно',
+
+    },
+    {
+        'name': 'Темпо',
+        'imgRestauran': "src/image/rest.jpg",
+        'raiting': '4.95',
+        'price': 'от 13',
+        'time': '20 мин',
+        'benefit': 'Выгодно',
+
+    },
+    {
+        'name': 'KFC',
+        'imgRestauran': "src/image/rest.jpg",
+        'raiting': '4.95',
+        'price': 'от 1р',
+        'time': '30 мин',
+        'benefit': 'Выгодно',
+
+    }, {
+        'name': 'Васильки',
+        'imgRestauran': "src/image/rest.jpg",
+        'raiting': '4.95',
+        'price': 'от 1р',
+        'time': '30 мин',
+        'benefit': 'Выгодно',
+
+    }
+]
+
+
+const cards = document.querySelector('.cards .container');
 const ulCards = document.createElement('ul');
-ulCards.classList.add('cards');
-main.append(ulCards);
+ulCards.classList.add('restaurant');
+cards.append(ulCards);
 
 
 function addRestaurant(arr) {
@@ -21,7 +68,7 @@ function addRestaurant(arr) {
         divImg.append(divBenefit);
         const imgBenefit = document.createElement('img');
         imgBenefit.classList.add('lightning');
-        imgBenefit.src = restaraunt.lightning;
+        imgBenefit.src = "src/image/lightning.png";
         divBenefit.append(imgBenefit);
         const p = document.createElement('p');
         p.innerText = restaraunt.benefit;
@@ -46,8 +93,15 @@ function addRestaurant(arr) {
 
         const liDelivery = document.createElement('li');
         liDelivery.classList.add('cards-item__time-of-delivery');
-        liDelivery.innerText = restaraunt.time;
         ulConditions.append(liDelivery);
+        const imgDelivery = document.createElement('img');
+        imgDelivery.classList.add('delivery');
+        imgDelivery.src = "src/image/delivery.png";
+        liDelivery.append(imgDelivery);
+        const spanDelivery = document.createElement('span');
+        spanDelivery.innerText = restaraunt.time;
+        liDelivery.append(spanDelivery);
+
         const liPrice = document.createElement('li');
         liPrice.classList.add('cards-item__price');
         liPrice.innerText = restaraunt.price;
