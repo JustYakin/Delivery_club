@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/7209f022e0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/styles.css">
 </head>
+
 <body>
     <script src="./dist/bundle.js"></script>
     <header>
@@ -19,14 +22,52 @@
     </nav>
     <section class="cards">
         <div class="container">
-            
         </div>
     </section>
     <section class="map">
         <div class="container">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7663a45ecf061e8d034dda5851425cb7ed4671a834476a11fd9815bb6dc829ac&amp;source=constructor" width="100%" height="431" frameborder="0"></iframe>
         </div>
     </section>
-    <footer>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__column footer__column-left">
+                    <div class="footer__logo">
+                        <img src="/src/img/logo.svg" alt="logo" style="width: 95px; height: 30;">
+                    </div>
+                    <div class="footer__item">
+                        <ul class="footer__list">
+                            <li>
+                                <a href="">Для ресторанов</a>
+                            </li>
+                            <li>
+                                <a href="">Курьерам</a>
+                            </li>
+                            <li>
+                                <a href="">Пресс-центр</a>
+                            </li>
+                            <li>
+                                <a href="">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__column footer__column-right">
+                    <div class="footer__title">
+                        <span>Мы в соцсетях</span>
+                    </div>
+                    <div class="footer__networks">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/?lang=ru" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://plus.google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>
