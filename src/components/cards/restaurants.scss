@@ -1,0 +1,49 @@
+.cards {
+    h2 {
+        text-transform: uppercase;
+        margin: 40px 0;
+        font-size: 46px;
+        line-height: 54px;
+        font-weight: 700;
+        @media screen and (min-width: 240px) and (max-width: 700px) {
+            font-size: 25px;
+            margin: 10px 0;
+        }
+    }
+}
+
+.restaurant {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+    grid-gap: 20px;
+    @media screen and (min-width: 1050px) and (max-width: 1350px) {
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+    @media screen and (min-width: 700px) and (max-width: 1050px) {
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+    @media screen and (min-width: 290px) and (max-width: 600px) {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+}
+
+.cards-item {
+    box-shadow: 0px 2px 6px -3px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.5s;
+    transition: transform 0.5s;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    img {
+        object-fit: cover;
+        max-height: 160px;
+        width: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+}
+
+.cards-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.16);
+}
