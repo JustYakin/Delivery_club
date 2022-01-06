@@ -11,8 +11,18 @@
         margin-bottom: 20px;
         border: none;
         outline: none;
-    }
-    button:hover {
-        background: #eeeded;
+        i {
+            color: #000;
+        }
+        &:hover {
+            background: #eeeded;
+        }
+        &:active {
+            background: #5a5a5a;
+            color: #fff;
+            i {
+                color: #fff;
+            }
+        }
     }
 }

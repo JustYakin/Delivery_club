@@ -1,7 +1,7 @@
 {
     "name": "team_delivery",
     "version": "1.0.0",
-    "description": "Team Delivery repo\r ```sh\r npm init\r ```\r ```sh\r npm i -D webpack webpack-cli\r ```",
+    "description": "Team Delivery repo",
     "main": "index.js",
     "scripts": {
         "build": "webpack",

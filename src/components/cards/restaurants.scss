@@ -5,6 +5,10 @@
         font-size: 46px;
         line-height: 54px;
         font-weight: 700;
+        @media screen and (min-width: 240px) and (max-width: 700px) {
+            font-size: 25px;
+            margin: 10px 0;
+        }
     }
 }
 
@@ -12,6 +16,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
     grid-gap: 20px;
+    @media screen and (min-width: 1050px) and (max-width: 1350px) {
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+    @media screen and (min-width: 700px) and (max-width: 1050px) {
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+    @media screen and (min-width: 290px) and (max-width: 600px) {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
 }
 
 .cards-item {
