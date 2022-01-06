@@ -1,5 +1,32 @@
 {
-    "restaraunts": [{
+    "restaraunts": [
+        {
+            "name": "Terra",
+            "imgRestauran": "src/image/rest.jpg",
+            "raiting": "4.95",
+            "price": "от 1р",
+            "time": "30 мин",
+            "benefit": "Выгодно"
+
+        },
+        {
+            "name": "Темпо",
+            "imgRestauran": "src/image/rest.jpg",
+            "raiting": "4.95",
+            "price": "от 13",
+            "time": "20 мин",
+            "benefit": "Выгодно"
+
+        },
+        {
+            "name": "KFC",
+            "imgRestauran": "src/image/rest.jpg",
+            "raiting": "4.95",
+            "price": "от 1р",
+            "time": "30 мин",
+            "benefit": "Выгодно"
+        },
+        {
             "name": "McDonald's",
             "imgRestauran": "src/image/rest.jpg",
             "rating": "4.95",
@@ -36,7 +63,6 @@
             "time": "30 мин",
             "benefit": "Выгодно",
             "favorite": "false"
-
         }
     ]
 }

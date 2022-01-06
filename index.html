@@ -11,7 +11,25 @@
 
 <body>
     <header>
-        <div class="container"></div>
+        <div class="container">
+            <div class="logo">
+                <div class="logo__img"><img src="src/components/header/img/logo.png" alt="#"></div>
+                <div class="logo__text"><span>Delivery Club</span></div>
+            </div>
+            <div class="search">
+                <div class="search__img"><img src="/src/components/header/img/search__img.png" alt=""></div>
+                <input type="text" value="Поиск" onfocus="if(this.value==this.defaultValue)this.value=''"
+                       onblur="if(this.value=='')this.value=this.defaultValue" >
+            </div>
+            <div class="basket">
+                <div class="basket__button">
+                    <button>
+                        <img src="/src/components/header/img/basket_img.png" alt="">
+                        <span>Корзина</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </header>
     <section class="cards">
         <div class="container">
@@ -33,6 +51,5 @@
     </section>
     <footer></footer>
     <script src="./dist/bundle.js"></script>
-
 </body>
 </html>
