@@ -78,7 +78,7 @@ function addRestaurant(arr) {
         divImg.append(divBenefit);
         const imgBenefit = document.createElement('img');
         imgBenefit.classList.add('lightning');
-        imgBenefit.src = "src/image/lightning.png";
+        imgBenefit.src = "src/image/lightning.jpg";
         divBenefit.append(imgBenefit);
         const p = document.createElement('p');
         p.innerText = restaraunt.benefit;

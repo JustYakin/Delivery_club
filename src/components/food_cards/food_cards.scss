@@ -5,6 +5,7 @@
 }
 
 .popup {
+    z-index: 5;
     position: fixed;
     top: 0;
     left: 0;
@@ -49,7 +50,7 @@
                 overflow: hidden;
                 margin: 0 auto;
                 .popup__card-img {
-                    background-image: url(/src/img/burger.png);
+                    background-image: url(/src/image/burger.png);
                     height: 135px;
                     background-position: center;
                     background-size: cover;
