@@ -1,6 +1,21 @@
 let url = 'http://localhost:3000/restaraunts';
-fetch(url)
-    .then(response => response.json())
+
+function getRestaurants() {
+    return fetch(url)
+        .then(response => response.json())
+}
+
+function updateRestaurants(restaurant) {
+    return fetch(`${url}/${restaurant.name}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(restaurant),
+    })
+}
+
+getRestaurants()
     .then((data) => {
         addRestaurant(data);
         return data;
@@ -8,14 +23,32 @@ fetch(url)
     .then((data) => {
         let btnSort = document.querySelector('.sorting button');
         btnSort.addEventListener('click', () => {
-            let li = document.querySelectorAll('.cards-item')
-            return li.forEach(item => {
-                item.remove()
-            })
+            let ulRestaurant = document.querySelector('.restaurant')
+            ulRestaurant.remove();
         })
         btnSort.addEventListener('click', () => {
             let sort = data.sort(sorting);
             return addRestaurant(sort);
+        })
+        let btnFavorite = document.querySelector('.favorite');
+        btnFavorite.addEventListener('click', () => {
+            let ulRestaurant = document.querySelector('.restaurant')
+            ulRestaurant.remove();
+        })
+        btnFavorite.addEventListener('click', () => {
+            let arrLike = [];
+            for (let key of data) {
+                if (key.favorite) {
+                    arrLike.push(key);
+
+                }
+            }
+            addRestaurant(arrLike);
+            if (arrLike.length < 2) {
+                const cardItem = document.querySelector('.cards-item')
+                cardItem.style.maxWidth = `${500}px`;
+            }
+
         })
     })
     .catch((error) => alert(error))
@@ -89,7 +122,24 @@ function addRestaurant(arr) {
         const like = document.createElement('div');
         like.classList.add('like');
         divImg.append(like);
-        getfavorite(restaraunt);
+
+        setFavoriteStyles()
+
+        like.addEventListener('click', () => {
+            restaraunt.favorite = !restaraunt.favorite
+            setFavoriteStyles();
+            updateRestaurants(restaraunt).catch((error) => alert(error));
+        })
+
+        function setFavoriteStyles() {
+            if (restaraunt.favorite) {
+                like.style.background = 'url("src/image/lovered.png")';
+                like.style.backgroundSize = 'cover';
+            } else {
+                like.style.background = null;
+                like.style.backgroundSize = null;
+            }
+        }
     }
 
     function cardImg(liCards, restaraunt) {
@@ -155,17 +205,6 @@ function sorting(x, y) {
         return 1;
     }
     return 0;
-}
-
-function getfavorite() {
-    const like = document.querySelectorAll('.like');
-    for (let item of like) {
-        item.addEventListener('click', () => {
-            item.style.background = 'url("src/image/lovered.png")';
-            item.style.backgroundSize = 'cover';
-        })
-    }
-
 }
 
 function initRatings(ratings) {
