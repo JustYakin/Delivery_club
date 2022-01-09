@@ -4,6 +4,20 @@
     text-decoration: none;
 }
 
+.map {
+    h2 {
+        text-transform: uppercase;
+        margin: 40px 0;
+        font-size: 46px;
+        line-height: 54px;
+        font-weight: 700;
+        @media screen and (min-width: 240px) and (max-width: 700px) {
+            font-size: 25px;
+            margin: 10px 0;
+        }
+    }
+}
+
 .footer {
     margin-top: 28px;
     font-family: 'Open Sans', sans-serif;
@@ -25,27 +39,45 @@
                         }
                         a {
                             color: black;
+                            &:hover {
+                                color: #291c06;
+                                text-shadow: 2px 2px 2px rgb(131, 108, 108);
+                            }
                         }
                     }
                 }
             }
-            .footer__title {
-                text-align: center;
-                font-size: 15px;
-            }
-            .footer__networks {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 13px;
-                gap: 27px;
-                i {
-                    font-size: 23px;
-                    color: rgba(203, 203, 203);
-                    &:hover {
-                        color: rgba(236, 121, 121, 1);
-                        transition: .6s;
-                        transform: scale(1.15);
-                    }
+        }
+        .footer__title {
+            text-align: center;
+            font-size: 15px;
+        }
+        .footer__networks {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 13px;
+            gap: 27px;
+            i {
+                font-size: 23px;
+                color: rgba(203, 203, 203);
+                &:hover {
+                    transition: .6s;
+                    transform: scale(1.15);
+                }
+                &.fa-facebook-f:hover {
+                    color: rgb(47, 0, 218);
+                }
+                &.fa-twitter:hover {
+                    color: rgb(75, 124, 230);
+                }
+                &.fa-google-plus-g:hover {
+                    color: rgba(236, 121, 121, 1);
+                }
+                &.fa-pinterest:hover {
+                    color: rgb(224, 38, 38);
+                }
+                &.fa-instagram:hover {
+                    color: #5d2b9e;
                 }
             }
         }
