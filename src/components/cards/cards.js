@@ -43,9 +43,12 @@ getRestaurants()
                 }
             }
             addRestaurant(arrLike);
-            if (arrLike.length == 1) {
-                const cardItem = document.querySelector('.cards-item')
-                cardItem.style.maxWidth = `${500}px`;
+            if ((arrLike.length == 1) || (arrLike.length == 2)) {
+                const cardItem = document.querySelectorAll('.cards-item');
+                cardItem.forEach(item => {
+                    item.style.maxWidth = `${480}px`;
+
+                })
             } else if (!arrLike.length) {
                 alert('Нет добавленных рестаранов в "Любимые"')
                 deleteRestaraunts();
