@@ -1,4 +1,11 @@
 {
+    "food": [{
+
+        "name": "2 бокс мастера",
+        "piece": "1 шт",
+        "cost": "400 p"
+
+    }],
     "restaraunts": [{
             "name": "Terra",
             "imgRestauran": "src/image/rest.jpg",

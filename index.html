@@ -2,193 +2,233 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet"/>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <link href="./dist/styles.css" rel="stylesheet" />
+    <link href="./dist/styles.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/7209f022e0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <div class="logo__img"><img src="src/image/logo_small.jpg" alt="#"></div>
-                <div class="logo__text"><span>Delivery Club</span></div>
-            </div>
-            <div class="search">
-                <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
-                <input type="text" value="Поиск" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue">
-            </div>
-            <div class="basket">
-                <div class="basket__button">
-                    <button>
-                        <img src="src/image/basket_img.png" alt="">
-                        <span>Корзина</span>
-                    </button>
-                </div>
-            </div>
+<header>
+    <div class="container">
+        <div class="logo">
+            <div class="logo__img"><img src="src/image/logo_small.jpg" alt="#"></div>
+            <div class="logo__text"><span>Delivery Club</span></div>
         </div>
-    </header>
-    <section class="cards">
-        <div class="container">
-            <h2>Рестораны</h2>
-            <div class="restaurant__options">
-                <div class="sorting">
-                    <button>
-              <span><i class="fas fa-sort-amount-up"></i></span>
-            </button>
-                </div>
-                <div class="favorite">
-                    <button>Любимые</button>
-                </div>
-            </div>
+        <div class="search">
+            <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
+            <input type="text" value="Поиск" onfocus="if(this.value==this.defaultValue)this.value=''"
+                   onblur="if(this.value=='')this.value=this.defaultValue">
         </div>
-    </section>
-    <a href="#popup">Тут будет кнопка рестика</a>
-    <div id="popup" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="#" class="popup__close">X</a>
-                <div class="popup__card">
-                    <div class="popup__card-img">
-                    </div>
-                    <div class="popup__card-inform">
-                        <h4>2 бокс мастера </h4>
-                        <div class="popup__card-price">
-                            <span class="">400 р.</span>
-                            <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+        <div class="basket">
+            <div class="basket__button">
+                <a href="#popup__basket">
+                    <img src="src/image/basket_img.png" alt="">
+                    <span>Корзина</span>
+                </a>
+            </div>
+            <div id="popup__basket" class="popup__basket">
+                <div class="popup__basket__body">
+                    <div class="popup__basket__content">
+                        <a href="" class="popup__basket__close">X</a>
+                        <h1>Оформление заказа</h1>
+                        <p>Ваш заказ</p>
+                        <div class="zakaz">
+                            <div class="zakaz__name"></div>
+                            <div class="zakaz__piece"></div>
+                            <div class="zakaz__cost"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="popup__card">
-                    <div class="popup__card-img">
-                    </div>
-                    <div class="popup__card-inform">
-                        <h4>2 бокс мастера </h4>
-                        <div class="popup__card-price">
-                            <span class="">400 р.</span>
-                            <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                        <p>Адрес доставки</p>
+                        <div class="name"><span>Ваше имя</span><input type="text"></div>
+                        <div class="number"><span>Ваш мобильный телефон</span><input type="text"></div>
+                        <div class="street"><span>Улица</span><input type="text"></div>
+                        <div class="adress">
+                            <div class="atribute"><span>Дом</span><input type="text"></div>
+                            <div class="atribute"><span>Квартира</span><input type="text"></div>
+                            <div class="atribute"><span>Подъезд</span><input type="text"></div>
+                            <div class="atribute"><span>Этаж</span><input type="text"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="popup__card">
-                    <div class="popup__card-img">
-                    </div>
-                    <div class="popup__card-inform">
-                        <h4>2 бокс мастера </h4>
-                        <div class="popup__card-price">
-                            <span class="">400 р.</span>
-                            <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                        <div class="comments"><span>Коментарии к заказу</span><input type="text"></div>
+                        <div class="time">
+                            <span>Время заказа</span>
+                            <button>В течение 45 минут</button>
+                            <button>Предварительный заказ</button>
                         </div>
-                    </div>
-                </div>
-                <div class="popup__card">
-                    <div class="popup__card-img">
-                    </div>
-                    <div class="popup__card-inform">
-                        <h4>2 бокс мастера </h4>
-                        <div class="popup__card-price">
-                            <span class="">400 р.</span>
-                            <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                        <div class="pay"><span>Способ оплаты</span>
+                            <button>Наличными</button>
+                            <button>Картой</button>
                         </div>
-                    </div>
-                </div>
-                <div class="popup__card">
-                    <div class="popup__card-img">
-                    </div>
-                    <div class="popup__card-inform">
-                        <h4>2 бокс мастера </h4>
-                        <div class="popup__card-price">
-                            <span class="">400 р.</span>
-                            <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup__card">
-                    <div class="popup__card-img">
-                    </div>
-                    <div class="popup__card-inform">
-                        <h4>2 бокс мастера </h4>
-                        <div class="popup__card-price">
-                            <span class="">400 р.</span>
-                            <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup__card">
-                    <div class="popup__card-img">
-                    </div>
-                    <div class="popup__card-inform">
-                        <h4>2 бокс мастера </h4>
-                        <div class="popup__card-price">
-                            <span class="">400 р.</span>
-                            <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup__card">
-                    <div class="popup__card-img">
-                    </div>
-                    <div class="popup__card-inform">
-                        <h4>2 бокс мастера </h4>
-                        <div class="popup__card-price">
-                            <span class="">400 р.</span>
-                            <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                        <div class="end">
+                            <button>Оформить</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</header>
 
-    <section class="map">
-        <div class="container">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7663a45ecf061e8d034dda5851425cb7ed4671a834476a11fd9815bb6dc829ac&amp;source=constructor" width="100%" height="431" frameborder="0"></iframe>
+<section class="cards">
+    <div class="container">
+        <h2>Рестораны</h2>
+        <div class="restaurant__options">
+            <div class="sorting">
+                <button>
+                    <span><i class="fas fa-sort-amount-up"></i></span>
+                </button>
+            </div>
+            <div class="favorite">
+                <button>Любимые</button>
+            </div>
         </div>
-    </section>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__wrapper">
-                <div class="footer__column footer__column-left">
-                    <div class="footer__logo">
-                        <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30;">
-                    </div>
-                    <div class="footer__item">
-                        <ul class="footer__list">
-                            <li>
-                                <a href="">Для ресторанов</a>
-                            </li>
-                            <li>
-                                <a href="">Курьерам</a>
-                            </li>
-                            <li>
-                                <a href="">Пресс-центр</a>
-                            </li>
-                            <li>
-                                <a href="">Контакты</a>
-                            </li>
-                        </ul>
+    </div>
+</section>
+<a href="#popup">Тут будет кнопка рестика</a>
+<div id="popup" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close">X</a>
+            <div class="popup__card">
+                <div class="popup__card-img">
+                </div>
+                <div class="popup__card-inform">
+                    <h4>2 бокс мастера </h4>
+                    <div class="popup__card-price">
+                        <span class="">400 р.</span>
+                        <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
                     </div>
                 </div>
-                <div class="footer__column footer__column-right">
-                    <div class="footer__title">
-                        <span>Мы в соцсетях</span>
+            </div>
+            <div class="popup__card">
+                <div class="popup__card-img">
+                </div>
+                <div class="popup__card-inform">
+                    <h4>2 бокс мастера </h4>
+                    <div class="popup__card-price">
+                        <span class="">400 р.</span>
+                        <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
                     </div>
-                    <div class="footer__networks">
-                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/?lang=ru" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://plus.google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
-                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="popup__card">
+                <div class="popup__card-img">
+                </div>
+                <div class="popup__card-inform">
+                    <h4>2 бокс мастера </h4>
+                    <div class="popup__card-price">
+                        <span class="">400 р.</span>
+                        <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__card">
+                <div class="popup__card-img">
+                </div>
+                <div class="popup__card-inform">
+                    <h4>2 бокс мастера </h4>
+                    <div class="popup__card-price">
+                        <span class="">400 р.</span>
+                        <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__card">
+                <div class="popup__card-img">
+                </div>
+                <div class="popup__card-inform">
+                    <h4>2 бокс мастера </h4>
+                    <div class="popup__card-price">
+                        <span class="">400 р.</span>
+                        <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__card">
+                <div class="popup__card-img">
+                </div>
+                <div class="popup__card-inform">
+                    <h4>2 бокс мастера </h4>
+                    <div class="popup__card-price">
+                        <span class="">400 р.</span>
+                        <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__card">
+                <div class="popup__card-img">
+                </div>
+                <div class="popup__card-inform">
+                    <h4>2 бокс мастера </h4>
+                    <div class="popup__card-price">
+                        <span class="">400 р.</span>
+                        <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__card">
+                <div class="popup__card-img">
+                </div>
+                <div class="popup__card-inform">
+                    <h4>2 бокс мастера </h4>
+                    <div class="popup__card-price">
+                        <span class="">400 р.</span>
+                        <button class="popup__card-button"><span class="popup__card-basket">В корзину</span></button>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="./dist/bundle.js"></script>
+    </div>
+</div>
+
+<section class="map">
+    <div class="container">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7663a45ecf061e8d034dda5851425cb7ed4671a834476a11fd9815bb6dc829ac&amp;source=constructor"
+                width="100%" height="431" frameborder="0"></iframe>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__column footer__column-left">
+                <div class="footer__logo">
+                    <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30px;">
+                </div>
+                <div class="footer__item">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="">Для ресторанов</a>
+                        </li>
+                        <li>
+                            <a href="">Курьерам</a>
+                        </li>
+                        <li>
+                            <a href="">Пресс-центр</a>
+                        </li>
+                        <li>
+                            <a href="">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__column footer__column-right">
+                <div class="footer__title">
+                    <span>Мы в соцсетях</span>
+                </div>
+                <div class="footer__networks">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/?lang=ru" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://plus.google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="./dist/bundle.js"></script>
 </body>
 
 </html>
