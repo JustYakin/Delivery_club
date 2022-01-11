@@ -1,5 +1,5 @@
 {
-  "restaraunts": [
+    "restaraunts": [
     {
       "name": "McDonald's",
       "imgRestauran": "src/image/McDonald's.jpg",
@@ -108,5 +108,43 @@
       "benefit": "Скидка навынос",
       "favorite": false
     }
-  ]
+  ],
+    "food": [{
+            "rest_id": "1",
+            "name": "2 бокс мастера",
+            "cost": "400 р."
+        },
+        {
+            "rest_id": "1",
+            "name": "Гамбургер",
+            "cost": "350 р."
+        },
+        {
+            "rest_id": "1",
+            "name": "Чизбургер",
+            "cost": "360 р."
+        },
+        {
+            "rest_id": "1",
+            "name": "Воппер",
+            "cost": "310 р."
+        }, {
+            "rest_id": "1",
+            "name": "Фанта 0.5 л.",
+            "cost": "327 р."
+        },
+        {
+            "rest_id": "1",
+            "name": "Картофель фри",
+            "cost": "250 р."
+        }, {
+            "rest_id": "1",
+            "name": "Соус горчичный",
+            "cost": "120 р."
+        }, {
+            "rest_id": "1",
+            "name": "Снэкбокс",
+            "cost": "450 р."
+        }
+    ]
 }
