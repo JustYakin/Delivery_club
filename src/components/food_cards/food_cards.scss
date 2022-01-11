@@ -49,6 +49,10 @@
                 border-radius: 15px;
                 overflow: hidden;
                 margin: 0 auto;
+                &:hover {
+                    transition: .3s;
+                    transform: scale(1.05);
+                }
                 .popup__card-img {
                     background-image: url(/src/image/burger.png);
                     height: 135px;
@@ -77,6 +81,10 @@
                             outline: none;
                             border-radius: 12px;
                             cursor: pointer;
+                            &:hover {
+                                transition: .3s;
+                                transform: scale(1.05);
+                            }
                             .popup__card-basket {
                                 font-family: Roboto;
                                 font-style: normal;

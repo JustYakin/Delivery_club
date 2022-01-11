@@ -25,6 +25,44 @@ function addRestaurant(arr) {
     for (let restaraunt of arr) {
         const liCards = document.createElement('li');
         liCards.classList.add('cards-item');
+        liCards.addEventListener('click', e => {
+            window.location.replace(window.location.href + '#popup');
+            let url = 'http://localhost:3000/food';
+            fetch(url)
+                .then(response => response.json())
+                .then((data) => {
+                    let popup_content = document.getElementsByClassName('popup__content')[0];
+                    data.forEach(item => {
+                        let popup_card = document.createElement('div');
+                        popup_card.classList.add('popup__card');
+                        popup_content.append(popup_card);
+                        let popup_card_img = document.createElement('div');
+                        popup_card_img.classList.add('popup__card-img');
+                        popup_card.append(popup_card_img);
+                        let popup_card_inform = document.createElement('div');
+                        popup_card_inform.classList.add('popup__card-inform');
+                        popup_card.append(popup_card_inform);
+                        let h4 = document.createElement('h4');
+                        h4.innerText = item.name;
+                        popup_card_inform.append(h4);
+                        let popup_card_price = document.createElement('div');
+                        popup_card_price.classList.add('popup__card-price');
+                        popup_card_inform.append(popup_card_price);
+                        let span = document.createElement('span');
+                        span.innerText = item.cost;
+                        popup_card_price.append(span);
+                        let popup_card_button = document.createElement('button');
+                        popup_card_button.classList.add('popup__card-button');
+                        popup_card_price.append(popup_card_button);
+                        let popup_card_basket = document.createElement('span');
+                        popup_card_basket.classList.add('popup__card-basket');
+                        popup_card_basket.innerText = 'В корзину';
+                        popup_card_button.append(popup_card_basket);
+                    })
+                })
+
+            .catch((error) => alert(error))
+        })
         ulCards.append(liCards);
 
         const divImg = cardImg(liCards, restaraunt);
