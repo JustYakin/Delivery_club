@@ -3,7 +3,7 @@
     {
       "name": "Terra",
       "imgRestauran": "src/image/rest.jpg",
-      "rating": "4.95",
+      "rating": 4.282690126894158,
       "price": "от 1р",
       "time": "30 мин",
       "benefit": "Выгодно",
@@ -12,7 +12,7 @@
     {
       "name": "Темпо",
       "imgRestauran": "src/image/rest.jpg",
-      "rating": "4.95",
+      "rating": 2.7279769515991212,
       "price": "от 13",
       "time": "20 мин",
       "benefit": "Выгодно",
@@ -21,7 +21,7 @@
     {
       "name": "KFC",
       "imgRestauran": "src/image/rest.jpg",
-      "rating": "4.95",
+      "rating": 4.8125,
       "price": "от 1р",
       "time": "30 мин",
       "benefit": "Выгодно",
@@ -30,7 +30,7 @@
     {
       "name": "McDonald's",
       "imgRestauran": "src/image/rest.jpg",
-      "rating": "4.95",
+      "rating": 4.5625,
       "price": "от 15р",
       "time": "40-50 мин",
       "benefit": "Выгодно",
@@ -39,7 +39,7 @@
     {
       "name": "Burger King",
       "imgRestauran": "src/image/rest.jpg",
-      "rating": "3.8",
+      "rating": 3.9375,
       "price": "от 1р",
       "time": "30 мин",
       "benefit": "Выгодно",
@@ -48,7 +48,7 @@
     {
       "name": "Васильки",
       "imgRestauran": "src/image/rest.jpg",
-      "rating": "2.6",
+      "rating": 3.75,
       "price": "от 13",
       "time": "20 мин",
       "benefit": "Выгодно",
@@ -57,7 +57,7 @@
     {
       "name": "Paul",
       "imgRestauran": "src/image/rest.jpg",
-      "rating": "1.5",
+      "rating": 2.75,
       "price": "от 1р",
       "time": "30 мин",
       "benefit": "Выгодно",

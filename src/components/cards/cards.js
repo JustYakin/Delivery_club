@@ -22,9 +22,9 @@ getRestaurants()
     })
     .then((data) => {
         let btnSort = document.querySelector('.sorting button');
+
         btnSort.addEventListener('click', () => {
-            let ulRestaurant = document.querySelector('.restaurant')
-            ulRestaurant.remove();
+            deleteRestaraunts();
         })
         btnSort.addEventListener('click', () => {
             let sort = data.sort(sorting);
@@ -32,26 +32,33 @@ getRestaurants()
         })
         let btnFavorite = document.querySelector('.favorite');
         btnFavorite.addEventListener('click', () => {
-            let ulRestaurant = document.querySelector('.restaurant')
-            ulRestaurant.remove();
+            deleteRestaraunts();
+
         })
         btnFavorite.addEventListener('click', () => {
             let arrLike = [];
             for (let key of data) {
                 if (key.favorite) {
                     arrLike.push(key);
-
                 }
             }
             addRestaurant(arrLike);
-            if (arrLike.length < 2) {
+            if (arrLike.length == 1) {
                 const cardItem = document.querySelector('.cards-item')
                 cardItem.style.maxWidth = `${500}px`;
+            } else if (!arrLike.length) {
+                alert('Нет добавленных рестаранов в "Любимые"')
+                deleteRestaraunts();
+                addRestaurant(data)
             }
-
         })
     })
     .catch((error) => alert(error))
+
+function deleteRestaraunts() {
+    let ulRestaurant = document.querySelector('.restaurant');
+    ulRestaurant.remove();
+}
 
 function addRestaurant(arr) {
     const ulCards = getCards();
@@ -155,7 +162,7 @@ function addRestaurant(arr) {
 
     function cardRating(ulConditions, restaraunt) {
         const liRating = document.createElement('li');
-        liRating.classList.add('cards-item__rating', 'rating_set');
+        liRating.classList.add('cards-item__rating');
 
         const divRatingBody = document.createElement('div');
         divRatingBody.classList.add('rating__body');
@@ -174,13 +181,18 @@ function addRestaurant(arr) {
         ulConditions.append(liRating);
 
         const ratings = document.querySelectorAll('.cards-item__rating');
-        initRatings(ratings)
+        initRatings(ratings);
 
         function ratingValue(restaraunt) {
             const spanRatingValue = document.createElement('span');
             spanRatingValue.classList.add('rating__value');
-            spanRatingValue.innerText = restaraunt.rating;
+            spanRatingValue.innerText = parseFloat(restaraunt.rating).toFixed(1);
             liRating.append(spanRatingValue);
+            divRatingItems.addEventListener('click', () => {
+                restaraunt.rating = (parseFloat(restaraunt.rating) + parseFloat(spanRatingValue.innerHTML)) / 2;
+                spanRatingValue.innerHTML = parseFloat(restaraunt.rating).toFixed(1);
+                updateRestaurants(restaraunt).catch((error) => alert(error));
+            })
         }
 
         function ratingItem() {
@@ -194,7 +206,6 @@ function addRestaurant(arr) {
             }
         }
     }
-
 }
 
 function sorting(x, y) {
@@ -218,11 +229,7 @@ function initRatings(ratings) {
     function initRating(rating) {
         initRatingVars(rating);
         setRatingActiveWidth();
-
-        if (rating.classList.contains('rating_set')) {
-            setRating(rating);
-        }
-
+        setRating(rating);
     }
     //инициализация переменных
     function initRatingVars(rating) {
@@ -236,6 +243,7 @@ function initRatings(ratings) {
     }
     //возможность указывать оценку
     function setRating(rating) {
+
         const ratingItems = rating.querySelectorAll('.rating__item');
         for (let i = 0; i < ratingItems.length; i++) {
 
@@ -254,11 +262,12 @@ function initRatings(ratings) {
 
             ratingItem.addEventListener("click", () => {
                 initRatingVars(rating);
-                ratingValue.innerHTML = (parseInt(ratingValue.innerHTML) + (i + 1)) / 2;
+                ratingValue.innerHTML = i + 1;
                 setRatingActiveWidth();
-
             })
+
         }
     }
+
 
 }
