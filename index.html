@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,46 +10,86 @@
     <link rel="icon" type="image/x-icon" href="src/image/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <link href="./dist/styles.css" rel="stylesheet" />
+    <link href="./dist/styles.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/7209f022e0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <div class="logo__img"><img src="src/image/logo_small.jpg" alt="#"></div>
-                <div class="logo__text"><span>Delivery Club</span></div>
+<header>
+    <div class="container">
+        <div class="logo">
+            <div class="logo__img"><img src="src/image/logo_small.jpg" alt="#"></div>
+            <div class="logo__text"><span>Delivery Club</span></div>
+        </div>
+        <div class="search">
+            <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
+            <input type="text" value="Поиск" onfocus="if(this.value==this.defaultValue)this.value=''"
+                   onblur="if(this.value=='')this.value=this.defaultValue">
+        </div>
+        <div class="basket">
+            <div class="basket__button">
+                <a href="#popup__basket">
+                    <img src="src/image/basket_img.png" alt="">
+                    <span>Корзина</span>
+                </a>
             </div>
-            <div class="search">
-                <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
-                <input type="text" value="Поиск" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue">
-            </div>
-            <div class="basket">
-                <div class="basket__button">
-                    <button>
-                        <img src="src/image/basket_img.png" alt="">
-                        <span>Корзина</span>
-                    </button>
+            <div id="popup__basket" class="popup__basket">
+                <div class="popup__basket__body">
+                    <div class="popup__basket__content">
+                        <a href="" class="popup__basket__close">X</a>
+                        <h1>Оформление заказа</h1>
+                        <p>Ваш заказ</p>
+                        <div class="zakaz">
+                            <div class="zakaz__name"></div>
+                            <div class="zakaz__piece"></div>
+                            <div class="zakaz__cost"></div>
+                        </div>
+                        <p>Адрес доставки</p>
+                        <div class="name"><span>Ваше имя</span><input type="text"></div>
+                        <div class="number"><span>Ваш мобильный телефон</span><input type="text"></div>
+                        <div class="street"><span>Улица</span><input type="text"></div>
+                        <div class="adress">
+                            <div class="atribute"><span>Дом</span><input type="text"></div>
+                            <div class="atribute"><span>Квартира</span><input type="text"></div>
+                            <div class="atribute"><span>Подъезд</span><input type="text"></div>
+                            <div class="atribute"><span>Этаж</span><input type="text"></div>
+                        </div>
+                        <div class="comments"><span>Коментарии к заказу</span><input type="text"></div>
+                        <div class="time">
+                            <span>Время заказа</span>
+                            <button>В течение 45 минут</button>
+                            <button>Предварительный заказ</button>
+                        </div>
+                        <div class="pay"><span>Способ оплаты</span>
+                            <button>Наличными</button>
+                            <button>Картой</button>
+                        </div>
+                        <div class="end">
+                            <button>Оформить</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-    <section class="cards">
-        <div class="container">
-            <h2>Рестораны</h2>
-            <div class="restaurant__options">
-                <div class="sorting">
-                    <button>
-              <span><i class="fas fa-sort-amount-up"></i></span>
-            </button>
-                </div>
-                <div class="favorite">
-                    <button>Любимые</button>
-                </div>
+    </div>
+</header>
+
+<section class="cards">
+    <div class="container">
+        <h2>Рестораны</h2>
+        <div class="restaurant__options">
+            <div class="sorting">
+                <button>
+                    <span><i class="fas fa-sort-amount-up"></i></span>
+                </button>
+            </div>
+            <div class="favorite">
+                <button>Любимые</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <div id="popup" class="popup">
         <div class="popup__body">
             <div class="popup__content">
@@ -56,6 +97,8 @@
             </div>
         </div>
     </div>
+</div>
+
 
     <section class="map">
         <div class="container">
@@ -86,23 +129,41 @@
                             </li>
                         </ul>
                     </div>
+
                 </div>
-                <div class="footer__column footer__column-right">
-                    <div class="footer__title">
-                        <span>Мы в соцсетях</span>
-                    </div>
-                    <div class="footer__networks">
-                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/?lang=ru" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://plus.google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
-                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
+                <div class="footer__item">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="">Для ресторанов</a>
+                        </li>
+                        <li>
+                            <a href="">Курьерам</a>
+                        </li>
+                        <li>
+                            <a href="">Пресс-центр</a>
+                        </li>
+                        <li>
+                            <a href="">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__column footer__column-right">
+                <div class="footer__title">
+                    <span>Мы в соцсетях</span>
+                </div>
+                <div class="footer__networks">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/?lang=ru" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://plus.google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="./dist/bundle.js"></script>
+    </div>
+</footer>
+<script src="./dist/bundle.js"></script>
 </body>
 
 </html>
