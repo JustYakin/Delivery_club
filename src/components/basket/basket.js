@@ -16,10 +16,7 @@ getFoodCards()
         for (let btn of food_button) {
             btn.addEventListener('click', () => {
                 for (let key of data) {
-                    for (let keys of key) {
-
-
-                        localStorage.setItem('food', JSON.stringify(keys));
+                        localStorage.setItem('food', JSON.stringify(key));
                         foodObj = JSON.parse(localStorage.getItem("food"));
                         let resName = document.createElement('span');
                         let resCost = document.createElement('span');
@@ -32,7 +29,6 @@ getFoodCards()
                         zakaz__cost.append(resCost);
                         zakaz__piece.append(resPiece);
                     }
-                }
             })
         }
     })
