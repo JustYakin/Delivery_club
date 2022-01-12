@@ -34,29 +34,28 @@ getFoodCards()
     })
     .catch((error) => alert(error))
 
-// let formData = {};
-// let zakaz__end = document.querySelector('.end button');
-//
-// let res1 = async function () {
-//     let response = await fetch('http://localhost:3000/food', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json;charset=utf-8'
-//         },
-//         body: formData
-//     });
-//     let result = response.json();
-//     console.log('Успех:', JSON.stringify(result));
-// }
-//
-//
-// zakaz__end.addEventListener('click', () => {
-//     let zakaz__Data = document.querySelectorAll('.popup__basket__content input');
-//     for (let i = 0; i < zakaz__Data.length; i++) {
-//         formData[i] = zakaz__Data[i].value;
-//         console.log(formData);
-//     }
-//     res1;
-// })
+let formData = {};
+let zakaz__end = document.querySelector('.end button');
 
 
+zakaz__end.addEventListener('click', () => {
+    let zakaz__Data = document.querySelectorAll('.popup__basket__content input');
+    for (let i = 0; i < zakaz__Data.length; i++) {
+        formData[i] = zakaz__Data[i].value;
+        console.log(formData);
+    }
+    updateorders(formData).catch((error) => alert(error));
+    for (let i = 0; i < zakaz__Data.length; i++) {
+        zakaz__Data[i].value = "";
+    }
+})
+
+function updateorders(user) {
+    return fetch('http://localhost:3000/orders', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user),
+    })
+}
