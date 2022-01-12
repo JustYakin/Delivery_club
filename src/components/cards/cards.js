@@ -6,7 +6,7 @@ function getRestaurants() {
 }
 
 function updateRestaurants(restaurant) {
-    return fetch(`${url}/${restaurant.name}`, {
+    return fetch(`${url}/${restaurant.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
