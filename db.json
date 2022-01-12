@@ -1,6 +1,7 @@
 {
     "restaraunts": [
     {
+      "id":"1",
       "name": "McDonald's",
       "imgRestauran": "src/image/McDonald's.jpg",
       "rating": 4.282690126894158,
@@ -10,6 +11,7 @@
       "favorite": false
     },
     {
+      "id":"2",
       "name": "Burger King",
       "imgRestauran": "src/image/Burger King.jpg",
       "rating": 3.3639884757995606,
@@ -19,6 +21,7 @@
       "favorite": false
     },
     {
+      "id":"3",
       "name": "KFC",
       "imgRestauran": "src/image/KFC.jpg",
       "rating": 3.90625,
@@ -28,6 +31,7 @@
       "favorite": false
     },
     {
+      "id":"4",
       "name": "Васильки",
       "imgRestauran": "src/image/Васильки.jpg",
       "rating": 4.5625,
@@ -37,6 +41,7 @@
       "favorite": false
     },
     {
+      "id":"5",
       "name": "Paul",
       "imgRestauran": "src/image/Paul.jpg",
       "rating": 3.9375,
@@ -46,6 +51,7 @@
       "favorite": false
     },
     {
+      "id":"6",
       "name": "Чайхана Lounge",
       "imgRestauran": "src/image/Чайхана Lounge.jpg",
       "rating": 3.6875,
@@ -55,6 +61,7 @@
       "favorite": false
     },
     {
+      "id":"7",
       "name": "ДЭПО",
       "imgRestauran": "src/image/ДЭПО.jpg",
       "rating": 1.9375,
@@ -64,6 +71,7 @@
       "favorite": false
     },
     {
+      "id":"8",
       "name": "Пицца Темпо",
       "imgRestauran": "src/image/темпо.jpg",
       "rating": 4.375,
@@ -73,6 +81,7 @@
       "favorite": false
     },
     {
+      "id":"9",
       "name": "Sushi chef arts",
       "imgRestauran": "src/image/Sushi chef arts.jpg",
       "rating": 4.375,
@@ -82,6 +91,7 @@
       "favorite": false
     },
     {
+      "id":"10",
       "name": "Clever Irish Pub",
       "imgRestauran": "src/image/Clever Irish Pub.jpg",
       "rating": 3.75,
@@ -91,6 +101,7 @@
       "favorite": false
     },
     {
+      "id":"11",
       "name": "Тифлис / Тифлисъ",
       "imgRestauran": "src/image/Тифлис.jpg",
       "rating": 3.75,
@@ -100,6 +111,7 @@
       "favorite": false
     },
     {
+      "id":"12",
       "name": "Salateira",
       "imgRestauran": "src/image/Salateira.jpg",
       "rating": 3.875,
