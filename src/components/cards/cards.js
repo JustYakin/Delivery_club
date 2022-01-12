@@ -68,7 +68,9 @@ function addRestaurant(arr) {
     for (let restaraunt of arr) {
         const liCards = document.createElement('li');
         liCards.classList.add('cards-item');
-        liCards.addEventListener('click', e => {
+        liCards.addEventListener('click', event => {
+            let e = event.target;
+            if ((e.classList != 'like') && (e.classList != 'rating__item') && (e.classList != 'cards-item__rating')) {
             window.location.replace(window.location.href + '#popup');
             let url = 'http://localhost:3000/food';
             fetch(url)
@@ -105,6 +107,7 @@ function addRestaurant(arr) {
                 })
 
             .catch((error) => alert(error))
+            }
         })
         ulCards.append(liCards);
 
