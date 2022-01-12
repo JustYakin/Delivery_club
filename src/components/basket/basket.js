@@ -1,7 +1,7 @@
-const urlfood = 'http://localhost:3000/food';
+let url = 'http://localhost:3000/food';
 
 function getFoodCards() {
-    return fetch(urlfood)
+    return fetch(url)
         .then(response => response.json())
 }
 
@@ -16,18 +16,22 @@ getFoodCards()
         for (let btn of food_button) {
             btn.addEventListener('click', () => {
                 for (let key of data) {
-                    localStorage.setItem('food', JSON.stringify(key));
-                    foodObj = JSON.parse(localStorage.getItem("food"));
-                    let resName = document.createElement('span');
-                    let resCost = document.createElement('span');
-                    let resPiece = document.createElement('span');
-                    resCost.innerHTML = foodObj.cost;
-                    resName.innerHTML = foodObj.name;
-                    resPiece.innerHTML = foodObj.piece;
+                    for (let keys of key) {
 
-                    zakaz__name.append(resName);
-                    zakaz__cost.append(resCost);
-                    zakaz__piece.append(resPiece);
+
+                        localStorage.setItem('food', JSON.stringify(keys));
+                        foodObj = JSON.parse(localStorage.getItem("food"));
+                        let resName = document.createElement('span');
+                        let resCost = document.createElement('span');
+                        let resPiece = document.createElement('span');
+                        resCost.innerHTML = foodObj.cost;
+                        resName.innerHTML = foodObj.name;
+                        resPiece.innerHTML = '1 шт';
+                        alert(food_button);
+                        zakaz__name.append(resName);
+                        zakaz__cost.append(resCost);
+                        zakaz__piece.append(resPiece);
+                    }
                 }
             })
         }

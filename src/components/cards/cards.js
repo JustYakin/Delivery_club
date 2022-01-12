@@ -75,6 +75,7 @@ function addRestaurant(arr) {
                 .then(response => response.json())
                 .then((data) => {
                     let popup_content = document.getElementsByClassName('popup__content')[0];
+                    // let rest_id = 0;
                     data.forEach(item => {
                         let popup_card = document.createElement('div');
                         popup_card.classList.add('popup__card');
@@ -100,11 +101,14 @@ function addRestaurant(arr) {
                         let popup_card_basket = document.createElement('span');
                         popup_card_basket.classList.add('popup__card-basket');
                         popup_card_basket.innerText = 'В корзину';
+                        popup_card_button.id = rest_id;
                         popup_card_button.append(popup_card_basket);
+                        // rest_id++;
                     })
                 })
 
             .catch((error) => alert(error))
+
         })
         ulCards.append(liCards);
 
@@ -247,6 +251,47 @@ function addRestaurant(arr) {
             }
         }
     }
+
+    // let url = 'http://localhost:3000/food';
+    // let food_button = document.querySelectorAll('.popup__card-button');
+    // let zakaz__name = document.querySelector('.zakaz__name');
+    // let zakaz__cost = document.querySelector('.zakaz__cost');
+    // let zakaz__piece = document.querySelector('.zakaz__piece');
+    //
+    // function getFoodCards() {
+    //     return fetch(url)
+    //         .then(response => response.json())
+    // }
+    //
+    // let foodObj = 0;
+    // getFoodCards()
+    //     .then((data) => {
+    //         for (let btn of food_button) {
+    //             btn.addEventListener('click', () => {
+    //                 for (let key of data) {
+    //                     if (key.rest_id==(btn.id)) {
+    //                         let i=key.rest_id;
+    //                         let resName = document.createElement('span');
+    //                         let resCost = document.createElement('span');
+    //                         let resPiece = document.createElement('span');
+    //                         resCost.innerHTML = data[i].cost;
+    //                         resName.innerHTML = data[i].name;
+    //                         resPiece.innerHTML = '1 шт';
+    //                         zakaz__name.append(resName);
+    //                         zakaz__cost.append(resCost);
+    //                         zakaz__piece.append(resPiece);
+    //                     }
+    //                     localStorage.setItem('food', JSON.stringify(key));
+    //                     foodObj = JSON.parse(localStorage.getItem("food"));
+    //
+    //
+    //                 }
+    //             })
+    //         }
+    //     })
+    //     .catch((error) => alert(error))
+
+
 }
 
 function sorting(x, y) {
