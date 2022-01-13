@@ -76,17 +76,21 @@ function addRestaurant(arr) {
             let idRestaraunt = restaraunt.id;
             let e = event.target;
             if ((e.classList != 'like') && (e.classList != 'rating__item') && (e.classList != 'cards-item__rating')) {
-                window.location.replace(window.location.href + '#popup');
+                //window.location.replace(window.location.href + '#popup');
+                document.getElementById('popup').style.display = "block";
+                document.getElementById('popup').style.opacity = "1";
+                document.getElementById('popup').style.visibility = "visible";
                 let url = 'http://localhost:3000/food';
                 fetch(url)
                     .then(response => response.json())
                     .then((data) => {
-                        let popup_content = document.getElementsByClassName('popup__content')[0];
+                        let popup_content = document.getElementsByClassName('popup__content_cards')[0];
                         data.forEach(item => {
                             let id = item.rest_id;
-                            if (id == idRestaraunt) {
+                            if (id === idRestaraunt) {
                                 let popup_card = document.createElement('div');
                                 popup_card.classList.add('popup__card');
+                                console.log(popup_content);
                                 popup_content.append(popup_card);
                                 let popup_card_img = document.createElement('div');
                                 popup_card_img.classList.add('popup__card-img');
@@ -126,6 +130,16 @@ function addRestaurant(arr) {
         cardRating(ulConditions, restaraunt);
 
     }
+
+    document.getElementsByClassName('popup__content')[0].addEventListener('click', e => {
+        if (e.target.classList.contains('popup__close')) {
+            document.getElementById('popup').style.display = "none";
+            document.getElementById('popup').style.opacity = "0";
+            document.getElementById('popup').style.visibility = "hidden";
+            let popup_content = document.getElementsByClassName('popup__content_cards')[0];
+            popup_content.innerHTML = "";
+        }
+    })
 
     function getCards() {
         const cards = document.querySelector('.cards .container');
