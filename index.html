@@ -23,8 +23,8 @@
         </div>
         <div class="search">
             <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
-            <input type="text" value="Поиск" onfocus="if(this.value==this.defaultValue)this.value=''"
-                   onblur="if(this.value=='')this.value=this.defaultValue">
+            <input type="text" class="searsh__input">
+            <button class="search__button">найти</button>
         </div>
         <div class="basket">
             <div class="basket__button">
@@ -57,8 +57,8 @@
                         <div class="comments"><span>Коментарии к заказу</span><input type="text"></div>
                         <div class="time">
                             <span>Время заказа</span>
-                            <button>В течение 45 минут</button>
-                            <button>Предварительный заказ</button>
+                            <p>В течение 45 минут<input type = "radio"  name = "first" checked></p>
+                            <p>Предварительный заказ<input type = "radio"  name = "first" checked></p>
                         </div>
                         <div class="pay"><span>Способ оплаты</span>
                             <button>Наличными</button>
@@ -97,7 +97,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
     <section class="map">
@@ -111,6 +110,7 @@
             <div class="footer__wrapper">
                 <div class="footer__column footer__column-left">
                     <div class="footer__logo">
+
                         <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30px;">
                     </div>
                     <div class="footer__item">
@@ -131,6 +131,10 @@
                     </div>
 
                 </div>
+
+                        <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30px;">
+                    </div>                   
+
                 <div class="footer__item">
                     <ul class="footer__list">
                         <li>

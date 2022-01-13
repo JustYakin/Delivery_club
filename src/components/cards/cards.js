@@ -6,7 +6,7 @@ function getRestaurants() {
 }
 
 function updateRestaurants(restaurant) {
-    return fetch(`${url}/${restaurant.name}`, {
+    return fetch(`${url}/${restaurant.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -21,8 +21,13 @@ getRestaurants()
         return data;
     })
     .then((data) => {
+        const logo = document.querySelector('.logo');
+        logo.style.cursor = 'pointer';
+        logo.addEventListener('click', () => {
+            deleteRestaraunts();
+            addRestaurant(data)
+        })
         let btnSort = document.querySelector('.sorting button');
-
         btnSort.addEventListener('click', () => {
             deleteRestaraunts();
         })
@@ -33,7 +38,6 @@ getRestaurants()
         let btnFavorite = document.querySelector('.favorite');
         btnFavorite.addEventListener('click', () => {
             deleteRestaraunts();
-
         })
         btnFavorite.addEventListener('click', () => {
             let arrLike = [];
@@ -47,7 +51,6 @@ getRestaurants()
                 const cardItem = document.querySelectorAll('.cards-item');
                 cardItem.forEach(item => {
                     item.style.maxWidth = `${480}px`;
-
                 })
             } else if (!arrLike.length) {
                 alert('Нет добавленных рестаранов в "Любимые"')
@@ -55,6 +58,7 @@ getRestaurants()
                 addRestaurant(data)
             }
         })
+
     })
     .catch((error) => alert(error))
 
@@ -68,47 +72,52 @@ function addRestaurant(arr) {
     for (let restaraunt of arr) {
         const liCards = document.createElement('li');
         liCards.classList.add('cards-item');
-        liCards.addEventListener('click', e => {
-            window.location.replace(window.location.href + '#popup');
-            let url = 'http://localhost:3000/food';
-            fetch(url)
-                .then(response => response.json())
-                .then((data) => {
-                    let popup_content = document.getElementsByClassName('popup__content')[0];
-                    // let rest_id = 0;
-                    data.forEach(item => {
-                        let popup_card = document.createElement('div');
-                        popup_card.classList.add('popup__card');
-                        popup_content.append(popup_card);
-                        let popup_card_img = document.createElement('div');
-                        popup_card_img.classList.add('popup__card-img');
-                        popup_card.append(popup_card_img);
-                        let popup_card_inform = document.createElement('div');
-                        popup_card_inform.classList.add('popup__card-inform');
-                        popup_card.append(popup_card_inform);
-                        let h4 = document.createElement('h4');
-                        h4.innerText = item.name;
-                        popup_card_inform.append(h4);
-                        let popup_card_price = document.createElement('div');
-                        popup_card_price.classList.add('popup__card-price');
-                        popup_card_inform.append(popup_card_price);
-                        let span = document.createElement('span');
-                        span.innerText = item.cost;
-                        popup_card_price.append(span);
-                        let popup_card_button = document.createElement('button');
-                        popup_card_button.classList.add('popup__card-button');
-                        popup_card_price.append(popup_card_button);
-                        let popup_card_basket = document.createElement('span');
-                        popup_card_basket.classList.add('popup__card-basket');
-                        popup_card_basket.innerText = 'В корзину';
-                        popup_card_button.id = rest_id;
-                        popup_card_button.append(popup_card_basket);
-                        // rest_id++;
+        liCards.addEventListener('click', event => {
+            let idRestaraunt = restaraunt.id;
+            let e = event.target;
+            if ((e.classList != 'like') && (e.classList != 'rating__item') && (e.classList != 'cards-item__rating')) {
+                window.location.replace(window.location.href + '#popup');
+                let url = 'http://localhost:3000/food';
+                fetch(url)
+                    .then(response => response.json())
+                    .then((data) => {
+                        let popup_content = document.getElementsByClassName('popup__content')[0];
+                        data.forEach((item,i) => {
+                            let id = item.rest_id;
+                            if (id == idRestaraunt) {
+                                let popup_card = document.createElement('div');
+                                popup_card.classList.add('popup__card');
+                                popup_content.append(popup_card);
+                                let popup_card_img = document.createElement('div');
+                                popup_card_img.classList.add('popup__card-img');
+                                popup_card_img.style.backgroundImage = `url(${item.imgFood})`;
+                                popup_card.append(popup_card_img);
+                                let popup_card_inform = document.createElement('div');
+                                popup_card_inform.classList.add('popup__card-inform');
+                                popup_card.append(popup_card_inform);
+                                let h4 = document.createElement('h4');
+                                h4.innerText = item.name;
+                                popup_card_inform.append(h4);
+                                let popup_card_price = document.createElement('div');
+                                popup_card_price.classList.add('popup__card-price');
+                                popup_card_inform.append(popup_card_price);
+                                let span = document.createElement('span');
+                                span.innerText = item.cost;
+                                popup_card_price.append(span);
+                                let popup_card_button = document.createElement('button');
+                                popup_card_button.setAttribute('id', i);
+                                popup_card_button.classList.add('popup__card-button');
+                                popup_card_price.append(popup_card_button);
+                                let popup_card_basket = document.createElement('span');
+                                popup_card_basket.classList.add('popup__card-basket');
+                                popup_card_basket.innerText = 'В корзину';
+                                popup_card_button.append(popup_card_basket);
+                            }
+                        })
                     })
-                })
 
-            .catch((error) => alert(error))
-
+                    .catch((error) => alert(error))
+            }
         })
         ulCards.append(liCards);
 
@@ -251,47 +260,6 @@ function addRestaurant(arr) {
             }
         }
     }
-
-    // let url = 'http://localhost:3000/food';
-    // let food_button = document.querySelectorAll('.popup__card-button');
-    // let zakaz__name = document.querySelector('.zakaz__name');
-    // let zakaz__cost = document.querySelector('.zakaz__cost');
-    // let zakaz__piece = document.querySelector('.zakaz__piece');
-    //
-    // function getFoodCards() {
-    //     return fetch(url)
-    //         .then(response => response.json())
-    // }
-    //
-    // let foodObj = 0;
-    // getFoodCards()
-    //     .then((data) => {
-    //         for (let btn of food_button) {
-    //             btn.addEventListener('click', () => {
-    //                 for (let key of data) {
-    //                     if (key.rest_id==(btn.id)) {
-    //                         let i=key.rest_id;
-    //                         let resName = document.createElement('span');
-    //                         let resCost = document.createElement('span');
-    //                         let resPiece = document.createElement('span');
-    //                         resCost.innerHTML = data[i].cost;
-    //                         resName.innerHTML = data[i].name;
-    //                         resPiece.innerHTML = '1 шт';
-    //                         zakaz__name.append(resName);
-    //                         zakaz__cost.append(resCost);
-    //                         zakaz__piece.append(resPiece);
-    //                     }
-    //                     localStorage.setItem('food', JSON.stringify(key));
-    //                     foodObj = JSON.parse(localStorage.getItem("food"));
-    //
-    //
-    //                 }
-    //             })
-    //         }
-    //     })
-    //     .catch((error) => alert(error))
-
-
 }
 
 function sorting(x, y) {

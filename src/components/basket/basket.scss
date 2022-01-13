@@ -111,7 +111,16 @@
           justify-content: space-between;
           span {
             width: 100%;
+            margin-bottom: 10px;
           }
+          p {
+            width: 40%;
+            font-size: 12px;
+          }
+          input {
+            width: 10%;
+          }
+
 
         }
 

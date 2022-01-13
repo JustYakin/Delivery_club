@@ -1,38 +1,56 @@
-let url = 'http://localhost:3000/food';
+const urlfood = 'http://localhost:3000/food';
 
-function getFoodCards() {
-    return fetch(url)
-        .then(response => response.json())
-}
+let res = [];
+window.addEventListener('DOMContentLoaded', () => {
+    const content = document.querySelector('.popup__content');
+    content.addEventListener('click', (e) => {
+        const tagName = e.target.tagName;
+        const id = parseInt(e.target.id) + 1;
+        const parrent_id = parseInt(e.target.parentNode.id) + 1;
 
-let food_button = document.querySelectorAll('.popup__card-button');
+        if (tagName === 'BUTTON') {
+            fetch(urlfood + `/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    res.push(data)
+                    localStorage.setItem('res', JSON.stringify(res));
+                });
+        } else if (tagName === 'SPAN') {
+            fetch(urlfood + `/${parrent_id}`)
+                .then(response => response.json())
+                .then(data => {
+                    res.push(data)
+                    localStorage.setItem('res', JSON.stringify(res));
+                });
+        }
+
+    });
+});
+
 let zakaz__name = document.querySelector('.zakaz__name');
 let zakaz__cost = document.querySelector('.zakaz__cost');
 let zakaz__piece = document.querySelector('.zakaz__piece');
 
-let foodObj = 0;
-getFoodCards()
-    .then((data) => {
-        for (let btn of food_button) {
-            btn.addEventListener('click', () => {
-                for (let key of data) {
-                        localStorage.setItem('food', JSON.stringify(key));
-                        foodObj = JSON.parse(localStorage.getItem("food"));
-                        let resName = document.createElement('span');
-                        let resCost = document.createElement('span');
-                        let resPiece = document.createElement('span');
-                        resCost.innerHTML = foodObj.cost;
-                        resName.innerHTML = foodObj.name;
-                        resPiece.innerHTML = '1 шт';
-                        alert(food_button);
-                        zakaz__name.append(resName);
-                        zakaz__cost.append(resCost);
-                        zakaz__piece.append(resPiece);
-                    }
-            })
+let basket__button = document.querySelector('.basket__button');
+basket__button.addEventListener('click',  () => {
+    let res = localStorage.getItem('res');
+    let parseRes = JSON.parse(res);
+    console.log(parseRes)
+        for (let key of parseRes) {
+            let resName = document.createElement('span');
+            let resCost = document.createElement('span');
+            let resPiece = document.createElement('span');
+            resCost.innerHTML = key.cost;
+            resName.innerHTML = key.name;
+            resPiece.innerHTML = '1 шт';
+
+            zakaz__name.append(resName);
+            zakaz__cost.append(resCost);
+            zakaz__piece.append(resPiece);
         }
-    })
-    .catch((error) => alert(error))
+    }
+)
+
 
 let formData = {};
 let zakaz__end = document.querySelector('.end button');

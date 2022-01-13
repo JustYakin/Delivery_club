@@ -63,8 +63,20 @@ header {
       input {
         outline: none;
         border: none;
+        border-bottom: solid 1px black;
         padding-bottom: 2px;
         font-weight: bold;
+      }
+
+      button {
+        width: 80px;
+        height: 30px;
+        background-color: #1b26f8;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        color: #ffffff;
+        margin-left: 10px;
       }
     }
 
