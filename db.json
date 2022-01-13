@@ -1,67 +1,111 @@
 {
     "restaraunts": [{
-            "name": "Terra",
-            "imgRestauran": "src/image/rest.jpg",
-            "rating": "4.95",
-            "price": "от 1р",
-            "time": "30 мин",
-            "benefit": "Выгодно"
-
-        },
-        {
-            "name": "Темпо",
-            "imgRestauran": "src/image/rest.jpg",
-            "rating": "4.95",
-            "price": "от 13",
-            "time": "20 мин",
-            "benefit": "Выгодно"
-
-        },
-        {
-            "name": "KFC",
-            "imgRestauran": "src/image/rest.jpg",
-            "rating": "4.95",
-            "price": "от 1р",
-            "time": "30 мин",
-            "benefit": "Выгодно"
-        },
-        {
             "name": "McDonald's",
-            "imgRestauran": "src/image/rest.jpg",
-            "rating": "4.95",
-            "price": "от 15р",
-            "time": "40-50 мин",
-            "benefit": "Выгодно",
-            "favorite": "false"
+            "imgRestauran": "src/image/McDonald's.jpg",
+            "rating": 4.282690126894158,
+            "price": "от 10р",
+            "time": "25-35 мин",
+            "benefit": "Выгодная доставка",
+            "favorite": false
         },
         {
             "name": "Burger King",
-            "imgRestauran": "src/image/rest.jpg",
-            "rating": "3.8",
-            "price": "от 1р",
-            "time": "30 мин",
-            "benefit": "Выгодно",
-            "favorite": "false"
-
+            "imgRestauran": "src/image/Burger King.jpg",
+            "rating": 3.3639884757995606,
+            "price": "от 13р",
+            "time": "20 мин",
+            "benefit": "Скидка 10%",
+            "favorite": false
+        },
+        {
+            "name": "KFC",
+            "imgRestauran": "src/image/KFC.jpg",
+            "rating": 3.90625,
+            "price": "от 5р",
+            "time": "35-45 мин",
+            "benefit": "Скидка 20% навынос",
+            "favorite": false
         },
         {
             "name": "Васильки",
-            "imgRestauran": "src/image/rest.jpg",
-            "rating": "2.6",
-            "price": "от 13",
-            "time": "20 мин",
-            "benefit": "Выгодно",
-            "favorite": "false"
-
+            "imgRestauran": "src/image/Васильки.jpg",
+            "rating": 4.5625,
+            "price": "от 15р",
+            "time": "40-50 мин",
+            "benefit": "Скидка 30%",
+            "favorite": false
         },
         {
             "name": "Paul",
-            "imgRestauran": "src/image/rest.jpg",
-            "rating": "1.5",
-            "price": "от 1р",
+            "imgRestauran": "src/image/Paul.jpg",
+            "rating": 3.9375,
+            "price": "от 10р",
+            "time": "45-55 мин",
+            "benefit": "Выгодная доставка",
+            "favorite": false
+        },
+        {
+            "name": "Чайхана Lounge",
+            "imgRestauran": "src/image/Чайхана Lounge.jpg",
+            "rating": 3.6875,
+            "price": "от 20р",
+            "time": "40-50 мин",
+            "benefit": "Скидка навынос",
+            "favorite": false
+        },
+        {
+            "name": "ДЭПО",
+            "imgRestauran": "src/image/ДЭПО.jpg",
+            "rating": 1.9375,
+            "price": "от 7р",
+            "time": "45-55 мин",
+            "benefit": "Выгодная доставка",
+            "favorite": false
+        },
+        {
+            "name": "Пицца Темпо",
+            "imgRestauran": "src/image/темпо.jpg",
+            "rating": 4.375,
+            "price": "от 15р",
+            "time": "40 мин",
+            "benefit": "Скидка 20% навынос",
+            "favorite": false
+        },
+        {
+            "name": "Sushi chef arts",
+            "imgRestauran": "src/image/Sushi chef arts.jpg",
+            "rating": 4.375,
+            "price": "от 13р",
+            "time": "35-45 мин",
+            "benefit": "Скидка 30%",
+            "favorite": false
+        },
+        {
+            "name": "Clever Irish Pub",
+            "imgRestauran": "src/image/Clever Irish Pub.jpg",
+            "rating": 3.75,
+            "price": "от 10р",
             "time": "30 мин",
-            "benefit": "Выгодно",
-            "favorite": "false"
+            "benefit": "Скидка 20%",
+            "favorite": false
+        },
+        {
+            "name": "Тифлис / Тифлисъ",
+            "imgRestauran": "src/image/Тифлис.jpg",
+            "rating": 3.75,
+            "price": "от 5р",
+            "time": "20 мин",
+            "benefit": "Скидка 20% навынос",
+            "favorite": false
+        },
+        {
+            "name": "Salateira",
+            "imgRestauran": "src/image/Salateira.jpg",
+            "rating": 3.875,
+            "price": "от 7р",
+            "time": "50-60 мин",
+            "benefit": "Скидка навынос",
+            "favorite": false
         }
     ],
     "food": [{
@@ -77,13 +121,14 @@
         {
             "rest_id": "1",
             "name": "Чизбургер",
-            "cost": "300 р."
+            "cost": "360 р."
         },
         {
             "rest_id": "1",
             "name": "Воппер",
             "cost": "310 р."
-        }, {
+        },
+        {
             "rest_id": "1",
             "name": "Фанта 0.5 л.",
             "cost": "327 р."
@@ -92,11 +137,13 @@
             "rest_id": "1",
             "name": "Картофель фри",
             "cost": "250 р."
-        }, {
+        },
+        {
             "rest_id": "1",
             "name": "Соус горчичный",
             "cost": "120 р."
-        }, {
+        },
+        {
             "rest_id": "1",
             "name": "Снэкбокс",
             "cost": "450 р."
