@@ -1,0 +1,64 @@
+{
+  "restaraunts": [
+    {
+      "name": "Terra",
+      "imgRestauran": "src/image/rest.jpg",
+      "rating": "4.95",
+      "price": "от 1р",
+      "time": "30 мин",
+      "benefit": "Выгодно"
+    },
+    {
+      "name": "Темпо",
+      "imgRestauran": "src/image/rest.jpg",
+      "rating": "4.95",
+      "price": "от 13",
+      "time": "20 мин",
+      "benefit": "Выгодно"
+    },
+    {
+      "name": "KFC",
+      "imgRestauran": "src/image/rest.jpg",
+      "rating": "4.95",
+      "price": "от 1р",
+      "time": "30 мин",
+      "benefit": "Выгодно"
+    },
+    {
+      "name": "McDonald's",
+      "imgRestauran": "src/image/rest.jpg",
+      "rating": "4.95",
+      "price": "от 15р",
+      "time": "40-50 мин",
+      "benefit": "Выгодно",
+      "favorite": "false"
+    },
+    {
+      "name": "Burger King",
+      "imgRestauran": "src/image/rest.jpg",
+      "rating": "3.8",
+      "price": "от 1р",
+      "time": "30 мин",
+      "benefit": "Выгодно",
+      "favorite": "false"
+    },
+    {
+      "name": "Васильки",
+      "imgRestauran": "src/image/rest.jpg",
+      "rating": "2.6",
+      "price": "от 13",
+      "time": "20 мин",
+      "benefit": "Выгодно",
+      "favorite": "false"
+    },
+    {
+      "name": "Paul",
+      "imgRestauran": "src/image/rest.jpg",
+      "rating": "1.5",
+      "price": "от 1р",
+      "time": "30 мин",
+      "benefit": "Выгодно",
+      "favorite": "false"
+    }
+  ]
+}

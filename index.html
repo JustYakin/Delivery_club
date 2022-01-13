@@ -23,20 +23,20 @@
         </div>
         <div class="search">
             <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
-            <input type="text" value="Поиск" onfocus="if(this.value==this.defaultValue)this.value=''"
-                   onblur="if(this.value=='')this.value=this.defaultValue">
+            <input type="text" class="searsh__input">
+            <button class="search__button">найти</button>
         </div>
         <div class="basket">
             <div class="basket__button">
-                <a href="#popup__basket">
+                <button class="popup__basket__open">
                     <img src="src/image/basket_img.png" alt="">
                     <span>Корзина</span>
-                </a>
+                </button>
             </div>
             <div id="popup__basket" class="popup__basket">
                 <div class="popup__basket__body">
                     <div class="popup__basket__content">
-                        <a href="" class="popup__basket__close">X</a>
+                        <button class="popup__basket__close">X</button>
                         <h1>Оформление заказа</h1>
                         <p>Ваш заказ</p>
                         <div class="zakaz">
@@ -57,8 +57,8 @@
                         <div class="comments"><span>Коментарии к заказу</span><input type="text"></div>
                         <div class="time">
                             <span>Время заказа</span>
-                            <button>В течение 45 минут</button>
-                            <button>Предварительный заказ</button>
+                            <p>В течение 45 минут<input type = "radio"  name = "first" checked></p>
+                            <p>Предварительный заказ<input type = "radio"  name = "first" checked></p>
                         </div>
                         <div class="pay"><span>Способ оплаты</span>
                             <button>Наличными</button>
@@ -111,8 +111,31 @@
             <div class="footer__wrapper">
                 <div class="footer__column footer__column-left">
                     <div class="footer__logo">
-                        <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30;">
+
+                        <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30px;">
+                    </div>
+                    <div class="footer__item">
+                        <ul class="footer__list">
+                            <li>
+                                <a href="">Для ресторанов</a>
+                            </li>
+                            <li>
+                                <a href="">Курьерам</a>
+                            </li>
+                            <li>
+                                <a href="">Пресс-центр</a>
+                            </li>
+                            <li>
+                                <a href="">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                        <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30px;">
                     </div>                   
+
                 <div class="footer__item">
                     <ul class="footer__list">
                         <li>

@@ -80,12 +80,13 @@ function addRestaurant(arr) {
                 document.getElementById('popup').style.display = "block";
                 document.getElementById('popup').style.opacity = "1";
                 document.getElementById('popup').style.visibility = "visible";
+
                 let url = 'http://localhost:3000/food';
                 fetch(url)
                     .then(response => response.json())
                     .then((data) => {
                         let popup_content = document.getElementsByClassName('popup__content_cards')[0];
-                        data.forEach(item => {
+                        data.forEach((item,i)  => {
                             let id = item.rest_id;
                             if (id === idRestaraunt) {
                                 let popup_card = document.createElement('div');
@@ -109,6 +110,7 @@ function addRestaurant(arr) {
                                 span.innerText = item.cost;
                                 popup_card_price.append(span);
                                 let popup_card_button = document.createElement('button');
+                                popup_card_button.setAttribute('id', i);
                                 popup_card_button.classList.add('popup__card-button');
                                 popup_card_price.append(popup_card_button);
                                 let popup_card_basket = document.createElement('span');
@@ -119,7 +121,7 @@ function addRestaurant(arr) {
                         })
                     })
 
-                .catch((error) => alert(error))
+                    .catch((error) => alert(error))
             }
         })
         ulCards.append(liCards);
@@ -140,6 +142,7 @@ function addRestaurant(arr) {
             popup_content.innerHTML = "";
         }
     })
+
 
     function getCards() {
         const cards = document.querySelector('.cards .container');
