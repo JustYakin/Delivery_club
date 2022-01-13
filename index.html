@@ -28,15 +28,15 @@
         </div>
         <div class="basket">
             <div class="basket__button">
-                <a href="#popup__basket">
+                <button class="popup__basket__open">
                     <img src="src/image/basket_img.png" alt="">
                     <span>Корзина</span>
-                </a>
+                </button>
             </div>
             <div id="popup__basket" class="popup__basket">
                 <div class="popup__basket__body">
                     <div class="popup__basket__content">
-                        <a href="" class="popup__basket__close">X</a>
+                        <button class="popup__basket__close">X</button>
                         <h1>Оформление заказа</h1>
                         <p>Ваш заказ</p>
                         <div class="zakaz">
@@ -90,13 +90,14 @@
     </div>
 </section>
 
-    <div id="popup" class="popup">
-        <div class="popup__body">
-            <div class="popup__content">
-                <a href="" class="popup__close">X</a>
-            </div>
+<div id="popup" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <button class="popup__close">X</button>
+            <div class="popup__content_cards"></div>
         </div>
     </div>
+</div>
 
 
     <section class="map">

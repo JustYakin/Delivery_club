@@ -25,16 +25,9 @@
         justify-content: center;
         padding: 30px 10px;
         .popup__content {
-            background-color: #E5E5E5;
-            color: black;
-            max-width: 800px;
-            padding: 30px;
             position: relative;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 21px;
             .popup__close {
+                z-index: 5;
                 position: absolute;
                 right: 10px;
                 top: 10px;
@@ -42,58 +35,69 @@
                 color: black;
                 text-decoration: none;
             }
-            .popup__card {
-                height: 210px;
-                width: 160px;
-                background-color: white;
-                border-radius: 15px;
-                overflow: hidden;
-                margin: 0 auto;
-                &:hover {
-                    transition: .3s;
-                    transform: scale(1.05);
-                }
-                .popup__card-img {
-                    background-image: url(/src/image/burger.png);
-                    height: 135px;
-                    background-position: center;
-                    background-size: cover;
-                }
-                .popup__card-inform {
-                    position: absolute;
-                    padding: 0 5px;
-                    h4 {
-                        margin-top: 5px;
-                        margin-left: 4px;
-                        font-size: 15px;
-                        position: relative;
+            .popup__content_cards {
+                background-color: #E5E5E5;
+                color: black;
+                max-width: 800px;
+                padding: 30px;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 21px;
+                .popup__card {
+                    height: 210px;
+                    width: 160px;
+                    background-color: white;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    &:hover {
+                        transition: .3s;
+                        transform: scale(1.05);
                     }
-                    .popup__card-price {
-                        margin: 15px 5px;
-                        display: flex;
-                        justify-content: space-between;
-                        position: relative;
-                        .popup__card-button {
-                            background-color: #41E219;
-                            height: 22px;
-                            width: 95px;
-                            margin-left: 10px;
-                            border: none;
-                            outline: none;
-                            border-radius: 12px;
-                            cursor: pointer;
-                            &:hover {
-                                transition: .3s;
-                                transform: scale(1.05);
-                            }
-                            .popup__card-basket {
-                                font-family: Roboto;
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 15px;
-                                align-items: center;
-                                text-align: center;
-                                color: white;
+                    .popup__card-img {
+                        background-image: url(/src/image/burger.png);
+                        height: 135px;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    .popup__card-inform {
+                        position: absolute;
+                        padding: 0 5px;
+                        h4 {
+                            margin-top: 5px;
+                            margin-left: 4px;
+                            font-size: 15px;
+                            position: relative;
+                        }
+                        .popup__card-price {
+                            margin: 15px 5px;
+                            display: flex;
+                            justify-content: space-between;
+                            position: relative;
+                            .popup__card-button {
+                                background-color: #41E219;
+                                height: 22px;
+                                width: 95px;
+                                margin-left: 10px;
+                                border: none;
+                                outline: none;
+                                border-radius: 12px;
+                                cursor: pointer;
+                                &:hover {
+                                    transition: .3s;
+                                    transform: scale(1.05);
+                                }
+                                .popup__card-basket {
+                                    font-family: Roboto;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 15px;
+                                    align-items: center;
+                                    text-align: center;
+                                    color: white;
+                                }
                             }
                         }
                     }
