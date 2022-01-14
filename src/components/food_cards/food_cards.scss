@@ -97,6 +97,9 @@
                                     transition: .3s;
                                     transform: scale(1.05);
                                 }
+                                &:active {
+                                    background-color: #43b148;
+                                }
                                 .popup__card-basket {
                                     font-family: Roboto;
                                     font-style: normal;

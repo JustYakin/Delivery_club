@@ -31,7 +31,7 @@ getRestaurants()
         addRestaurant(data);
         return data;
     })
-    .then((data) => {       
+    .then((data) => {
         let btnSort = document.querySelector('.sorting button');
         btnSort.addEventListener('click', () => {
             deleteRestaraunts();
@@ -77,22 +77,23 @@ let search_input = document.querySelector('.searsh__input');
 function search() {
     search_input.addEventListener('keydown', (e) => {
         if (e.keyCode === 13) {
-            if (search_input.value !== "") {
-                deleteRestaraunts();
-                fetch(`${url}?name=${search_input.value}`)
-                    .then(response => response.json())
-                    .then(data => {
+            fetch(`${url}?name=${search_input.value}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        alert('Таких ресторанов не найдено!');
+                        search_input.value = '';
+
+                    } else {
+                        deleteRestaraunts();
                         addRestaurant(data)
                         let cardItem = document.querySelectorAll('.cards-item');
                         cardItem.forEach(item => {
                             item.style.maxWidth = `${480}px`;
+                            search_input.value = '';
                         })
-                    })
-            }
-            else
-            {
-                alert('Таких ресторанов не найдено!')
-            }
+                    }
+                })
         }
 
     })
@@ -153,7 +154,7 @@ function addRestaurant(arr) {
                         })
                     })
 
-                    .catch((error) => alert(error))
+                .catch((error) => alert(error))
             }
         })
         ulCards.append(liCards);
@@ -174,7 +175,7 @@ function addRestaurant(arr) {
             popup_content.innerHTML = "";
         }
     })
-  
+
     function getCards() {
         const cards = document.querySelector('.cards .container');
         const ulCards = document.createElement('ul');
