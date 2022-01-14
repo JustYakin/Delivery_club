@@ -80,7 +80,6 @@ function addRestaurant(arr) {
                 document.getElementById('popup').style.display = "block";
                 document.getElementById('popup').style.opacity = "1";
                 document.getElementById('popup').style.visibility = "visible";
-
                 let url = 'http://localhost:3000/food';
                 fetch(url)
                     .then(response => response.json())
@@ -142,8 +141,7 @@ function addRestaurant(arr) {
             popup_content.innerHTML = "";
         }
     })
-
-
+  
     function getCards() {
         const cards = document.querySelector('.cards .container');
         const ulCards = document.createElement('ul');
