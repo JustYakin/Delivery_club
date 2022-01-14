@@ -15,18 +15,24 @@ function updateRestaurants(restaurant) {
     })
 }
 
+const logo = document.querySelector('.logo');
+logo.style.cursor = 'pointer';
+logo.addEventListener('click', () => {
+    deleteRestaraunts();
+    getRestaurants()
+        .then((data) => {
+            addRestaurant(data);
+            return data;
+        })
+    addRestaurant(data)
+})
+
 getRestaurants()
     .then((data) => {
         addRestaurant(data);
         return data;
     })
-    .then((data) => {
-        const logo = document.querySelector('.logo');
-        logo.style.cursor = 'pointer';
-        logo.addEventListener('click', () => {
-            deleteRestaraunts();
-            addRestaurant(data)
-        })
+    .then((data) => {       
         let btnSort = document.querySelector('.sorting button');
         btnSort.addEventListener('click', () => {
             deleteRestaraunts();
