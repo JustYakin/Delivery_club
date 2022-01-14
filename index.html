@@ -15,57 +15,57 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <div class="logo__img"><img src="src/image/logo_small.jpg" alt="#"></div>
-                <div class="logo__text"><span>Delivery Club</span></div>
+<header>
+    <div class="container">
+        <div class="logo">
+            <div class="logo__img"><img src="src/image/logo_small.jpg" alt="#"></div>
+            <div class="logo__text"><span>Delivery Club</span></div>
+        </div>
+        <div class="search">
+            <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
+            <input type="text" class="searsh__input">
+            <button class="search__button">найти</button>
+        </div>
+        <div class="basket">
+            <div class="basket__button">
+                <button class="popup__basket__open">
+                    <img src="src/image/basket_img.png" alt="">
+                    <span>Корзина</span>
+                </button>
             </div>
-            <div class="search">
-                <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
-                <input type="text" value="Поиск" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue">
-            </div>
-            <div class="basket">
-                <div class="basket__button">
-                    <a href="#popup__basket">
-                        <img src="src/image/basket_img.png" alt="">
-                        <span>Корзина</span>
-                    </a>
-                </div>
-                <div id="popup__basket" class="popup__basket">
-                    <div class="popup__basket__body">
-                        <div class="popup__basket__content">
-                            <a href="" class="popup__basket__close">X</a>
-                            <h1>Оформление заказа</h1>
-                            <p>Ваш заказ</p>
-                            <div class="zakaz">
-                                <div class="zakaz__name"></div>
-                                <div class="zakaz__piece"></div>
-                                <div class="zakaz__cost"></div>
-                            </div>
-                            <p>Адрес доставки</p>
-                            <div class="name"><span>Ваше имя</span><input type="text"></div>
-                            <div class="number"><span>Ваш мобильный телефон</span><input type="text"></div>
-                            <div class="street"><span>Улица</span><input type="text"></div>
-                            <div class="adress">
-                                <div class="atribute"><span>Дом</span><input type="text"></div>
-                                <div class="atribute"><span>Квартира</span><input type="text"></div>
-                                <div class="atribute"><span>Подъезд</span><input type="text"></div>
-                                <div class="atribute"><span>Этаж</span><input type="text"></div>
-                            </div>
-                            <div class="comments"><span>Коментарии к заказу</span><input type="text"></div>
-                            <div class="time">
-                                <span>Время заказа</span>
-                                <button>В течение 45 минут</button>
-                                <button>Предварительный заказ</button>
-                            </div>
-                            <div class="pay"><span>Способ оплаты</span>
-                                <button>Наличными</button>
-                                <button>Картой</button>
-                            </div>
-                            <div class="end">
-                                <button>Оформить</button>
-                            </div>
+            <div id="popup__basket" class="popup__basket">
+                <div class="popup__basket__body">
+                    <div class="popup__basket__content">
+                        <button class="popup__basket__close">X</button>
+                        <h1>Оформление заказа</h1>
+                        <p>Ваш заказ</p>
+                        <div class="zakaz">
+                            <div class="zakaz__name"></div>
+                            <div class="zakaz__piece"></div>
+                            <div class="zakaz__cost"></div>
+                        </div>
+                        <p>Адрес доставки</p>
+                        <div class="name"><span>Ваше имя</span><input type="text"></div>
+                        <div class="number"><span>Ваш мобильный телефон</span><input type="text"></div>
+                        <div class="street"><span>Улица</span><input type="text"></div>
+                        <div class="adress">
+                            <div class="atribute"><span>Дом</span><input type="text"></div>
+                            <div class="atribute"><span>Квартира</span><input type="text"></div>
+                            <div class="atribute"><span>Подъезд</span><input type="text"></div>
+                            <div class="atribute"><span>Этаж</span><input type="text"></div>
+                        </div>
+                        <div class="comments"><span>Коментарии к заказу</span><input type="text"></div>
+                        <div class="time">
+                            <span>Время заказа</span>
+                            <p>В течение 45 минут<input type = "radio"  name = "first" checked></p>
+                            <p>Предварительный заказ<input type = "radio"  name = "first" checked></p>
+                        </div>
+                        <div class="pay"><span>Способ оплаты</span>
+                            <button>Наличными</button>
+                            <button>Картой</button>
+                        </div>
+                        <div class="end">
+                            <button>Оформить</button>
                         </div>
                     </div>
                 </div>
@@ -97,6 +97,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
     <section class="map">
@@ -110,7 +111,7 @@
             <div class="footer__wrapper">
                 <div class="footer__column footer__column-left">
                     <div class="footer__logo">
-                        <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30;">
+                        <img src="src/image/logo.png" alt="logo" style="width: 95px; height: 30px;">
                     </div>
                     <div class="footer__item">
                         <ul class="footer__list">
