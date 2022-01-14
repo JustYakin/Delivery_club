@@ -15,18 +15,24 @@ function updateRestaurants(restaurant) {
     })
 }
 
+const logo = document.querySelector('.logo');
+logo.style.cursor = 'pointer';
+logo.addEventListener('click', () => {
+    deleteRestaraunts();
+    getRestaurants()
+        .then((data) => {
+            addRestaurant(data);
+            return data;
+        })
+    addRestaurant(data)
+})
+
 getRestaurants()
     .then((data) => {
         addRestaurant(data);
         return data;
     })
-    .then((data) => {
-        const logo = document.querySelector('.logo');
-        logo.style.cursor = 'pointer';
-        logo.addEventListener('click', () => {
-            deleteRestaraunts();
-            addRestaurant(data)
-        })
+    .then((data) => {       
         let btnSort = document.querySelector('.sorting button');
         btnSort.addEventListener('click', () => {
             deleteRestaraunts();
@@ -108,7 +114,6 @@ function addRestaurant(arr) {
                 document.getElementById('popup').style.display = "block";
                 document.getElementById('popup').style.opacity = "1";
                 document.getElementById('popup').style.visibility = "visible";
-
                 let url = 'http://localhost:3000/food';
                 fetch(url)
                     .then(response => response.json())
@@ -170,8 +175,7 @@ function addRestaurant(arr) {
             popup_content.innerHTML = "";
         }
     })
-
-
+  
     function getCards() {
         const cards = document.querySelector('.cards .container');
         const ulCards = document.createElement('ul');
