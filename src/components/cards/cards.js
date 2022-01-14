@@ -24,7 +24,6 @@ logo.addEventListener('click', () => {
             addRestaurant(data);
             return data;
         })
-    addRestaurant(data)
 })
 
 getRestaurants()
