@@ -3,12 +3,12 @@
 
 <head>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Delivery Club</title>
     <link rel="icon" type="image/x-icon" href="src/image/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet"/>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="./dist/styles.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/7209f022e0.js" crossorigin="anonymous"></script>
@@ -23,8 +23,7 @@
         </div>
         <div class="search">
             <div class="search__img"><img src="src/image/search__img.png" alt=""></div>
-            <input type="text" class="searsh__input">
-            <button class="search__button">найти</button>
+            <input type="text" class="searsh__input" placeholder="Поиск">
         </div>
         <div class="basket">
             <div class="basket__button">
@@ -38,7 +37,7 @@
                     <div class="popup__basket__content">
                         <button class="popup__basket__close">X</button>
                         <h1>Оформление заказа</h1>
-                        <p>Ваш заказ</p>
+                        <div class="summ"><div><p>Ваш заказ</p></div><div><span class="summSpan"></span></div></div>
                         <div class="zakaz">
                             <div class="zakaz__name"></div>
                             <div class="zakaz__piece"></div>
@@ -55,15 +54,15 @@
                             <div class="atribute"><span>Этаж</span><input type="text"></div>
                         </div>
                         <div class="comments"><span>Коментарии к заказу</span><input type="text"></div>
-                        <div class="time">
-                            <span>Время заказа</span>
-                            <p>В течение 45 минут<input type = "radio"  name = "first" checked></p>
-                            <p>Предварительный заказ<input type = "radio"  name = "first" checked></p>
-                        </div>
-                        <div class="pay"><span>Способ оплаты</span>
-                            <button>Наличными</button>
-                            <button>Картой</button>
-                        </div>
+                        <!--                        <div class="time">-->
+                        <!--                            <span>Время заказа</span>-->
+                        <!--                            <p>В течение 45 минут<input type = "radio"  name = "first" checked></p>-->
+                        <!--                            <p>Предварительный заказ<input type = "radio"  name = "first" checked></p>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="pay"><span>Способ оплаты</span>-->
+                        <!--                            <button>Наличными</button>-->
+                        <!--                            <button>Картой</button>-->
+                        <!--                        </div>-->
                         <div class="end">
                             <button>Оформить</button>
                         </div>
@@ -98,7 +97,6 @@
         </div>
     </div>
 </div>
-
 
     <section class="map">
         <div class="container">
@@ -146,6 +144,7 @@
         </div>
     </footer>
     <script src="./dist/bundle.js"></script>
+
 </body>
 
 </html>

@@ -73,6 +73,34 @@ function deleteRestaraunts() {
     ulRestaurant.remove();
 }
 
+let search_input = document.querySelector('.searsh__input');
+
+function search() {
+    search_input.addEventListener('keydown', (e) => {
+        if (e.keyCode === 13) {
+            if (search_input.value !== "") {
+                deleteRestaraunts();
+                fetch(`${url}?name=${search_input.value}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        addRestaurant(data)
+                        let cardItem = document.querySelectorAll('.cards-item');
+                        cardItem.forEach(item => {
+                            item.style.maxWidth = `${480}px`;
+                        })
+                    })
+            }
+            else
+            {
+                alert('Таких ресторанов не найдено!')
+            }
+        }
+
+    })
+}
+
+search();
+
 function addRestaurant(arr) {
     const ulCards = getCards();
     for (let restaraunt of arr) {
@@ -91,12 +119,11 @@ function addRestaurant(arr) {
                     .then(response => response.json())
                     .then((data) => {
                         let popup_content = document.getElementsByClassName('popup__content_cards')[0];
-                        data.forEach((item,i)  => {
+                        data.forEach((item, i) => {
                             let id = item.rest_id;
                             if (id === idRestaraunt) {
                                 let popup_card = document.createElement('div');
                                 popup_card.classList.add('popup__card');
-                                console.log(popup_content);
                                 popup_content.append(popup_card);
                                 let popup_card_img = document.createElement('div');
                                 popup_card_img.classList.add('popup__card-img');
@@ -112,6 +139,7 @@ function addRestaurant(arr) {
                                 popup_card_price.classList.add('popup__card-price');
                                 popup_card_inform.append(popup_card_price);
                                 let span = document.createElement('span');
+                                span.style.fontSize = '15px';
                                 span.innerText = item.cost;
                                 popup_card_price.append(span);
                                 let popup_card_button = document.createElement('button');
@@ -299,22 +327,26 @@ function initRatings(ratings) {
         const rating = ratings[i];
         initRating(rating);
     }
+
     //инициализируем конкретный рейтинг
     function initRating(rating) {
         initRatingVars(rating);
         setRatingActiveWidth();
         setRating(rating);
     }
+
     //инициализация переменных
     function initRatingVars(rating) {
         ratingActive = rating.querySelector('.rating__active');
         ratingValue = rating.querySelector('.rating__value');
     }
+
     //изменяем ширину актив звезд
     function setRatingActiveWidth(i = ratingValue.innerHTML) {
         const ratingActiveWidth = i / 0.05;
         ratingActive.style.width = `${ratingActiveWidth}%`
     }
+
     //возможность указывать оценку
     function setRating(rating) {
 
