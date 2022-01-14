@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,22 +27,60 @@
             </div>
             <div class="basket">
                 <div class="basket__button">
-                    <button>
+                    <a href="#popup__basket">
                         <img src="src/image/basket_img.png" alt="">
                         <span>Корзина</span>
-                    </button>
+                    </a>
+                </div>
+                <div id="popup__basket" class="popup__basket">
+                    <div class="popup__basket__body">
+                        <div class="popup__basket__content">
+                            <a href="" class="popup__basket__close">X</a>
+                            <h1>Оформление заказа</h1>
+                            <p>Ваш заказ</p>
+                            <div class="zakaz">
+                                <div class="zakaz__name"></div>
+                                <div class="zakaz__piece"></div>
+                                <div class="zakaz__cost"></div>
+                            </div>
+                            <p>Адрес доставки</p>
+                            <div class="name"><span>Ваше имя</span><input type="text"></div>
+                            <div class="number"><span>Ваш мобильный телефон</span><input type="text"></div>
+                            <div class="street"><span>Улица</span><input type="text"></div>
+                            <div class="adress">
+                                <div class="atribute"><span>Дом</span><input type="text"></div>
+                                <div class="atribute"><span>Квартира</span><input type="text"></div>
+                                <div class="atribute"><span>Подъезд</span><input type="text"></div>
+                                <div class="atribute"><span>Этаж</span><input type="text"></div>
+                            </div>
+                            <div class="comments"><span>Коментарии к заказу</span><input type="text"></div>
+                            <div class="time">
+                                <span>Время заказа</span>
+                                <button>В течение 45 минут</button>
+                                <button>Предварительный заказ</button>
+                            </div>
+                            <div class="pay"><span>Способ оплаты</span>
+                                <button>Наличными</button>
+                                <button>Картой</button>
+                            </div>
+                            <div class="end">
+                                <button>Оформить</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+
     <section class="cards">
         <div class="container">
             <h2>Рестораны</h2>
             <div class="restaurant__options">
                 <div class="sorting">
                     <button>
-              <span><i class="fas fa-sort-amount-up"></i></span>
-            </button>
+                    <span><i class="fas fa-sort-amount-up"></i></span>
+                </button>
                 </div>
                 <div class="favorite">
                     <button>Любимые</button>
@@ -49,13 +88,16 @@
             </div>
         </div>
     </section>
+
     <div id="popup" class="popup">
         <div class="popup__body">
             <div class="popup__content">
-                <a href="" class="popup__close">X</a>
+                <i class="fas fa-times-circle popup__close"></i>
+                <div class="popup__content_cards"></div>
             </div>
         </div>
     </div>
+
 
     <section class="map">
         <div class="container">
