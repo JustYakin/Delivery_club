@@ -71,26 +71,30 @@ let search_input = document.querySelector('.searsh__input');
 
 function search() {
     search_input.addEventListener('keydown', (e) => {
-        if (e.keyCode === 13) {
-            if (search_input.value !== "") {
-                deleteRestaraunts();
+            if (e.keyCode === 13) {
+
+
                 fetch(`${url}?name=${search_input.value}`)
                     .then(response => response.json())
                     .then(data => {
-                        addRestaurant(data)
-                        let cardItem = document.querySelectorAll('.cards-item');
-                        cardItem.forEach(item => {
-                            item.style.maxWidth = `${480}px`;
-                        })
+                        console.log(data)
+                        if (data.length===0){
+                            alert('Таких ресторанов не найдено!')
+                        }
+                        else {
+                            deleteRestaraunts();
+                            addRestaurant(data)
+                            let cardItem = document.querySelectorAll('.cards-item');
+                            cardItem.forEach(item => {
+                                    item.style.maxWidth = `${480}px`;
+                                }
+                            )
+                        }
                     })
             }
-            else
-            {
-                alert('Таких ресторанов не найдено!')
-            }
-        }
 
-    })
+        }
+    )
 }
 
 search();

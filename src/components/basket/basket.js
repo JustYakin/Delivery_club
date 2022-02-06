@@ -42,6 +42,10 @@ window.addEventListener('DOMContentLoaded', () => {
                     resName.innerHTML = data.name;
                     resPiece.innerHTML = '1 шт';
 
+                    resName.classList.add('remove_span');
+                    resCost.classList.add('remove_span');
+                    resPiece.classList.add('remove_span');
+
                     zakaz__name.append(resName);
                     zakaz__cost.append(resCost);
                     zakaz__piece.append(resPiece);
@@ -65,6 +69,11 @@ window.addEventListener('DOMContentLoaded', () => {
                     let resName = document.createElement('span');
                     let resCost = document.createElement('span');
                     let resPiece = document.createElement('span');
+
+                    resName.classList.add('remove_span');
+                    resCost.classList.add('remove_span');
+                    resPiece.classList.add('remove_span');
+
                     resCost.innerHTML = data.cost;
                     resName.innerHTML = data.name;
                     resPiece.innerHTML = '1 шт';
@@ -122,12 +131,18 @@ zakaz__end.addEventListener('click', () => {
             formData.id = `zakaz_${food_zakaz}`;
         }
         formData[i] = zakaz__Data[i].value;
-        console.log(formData);
     }
     updateorders(formData).catch((error) => alert(error));
     for (let i = 0; i < zakaz__Data.length; i++) {
         zakaz__Data[i].value = "";
     }
+
+    let last_remove_span = document.querySelectorAll('.remove_span')
+    for ( let x of last_remove_span) {
+        x.remove();
+    }
+    let sumSpan = document.querySelector('.summSpan');
+    sumSpan.remove();
 })
 
 function updateorders(user) {
