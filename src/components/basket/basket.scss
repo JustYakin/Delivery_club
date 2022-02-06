@@ -1,230 +1,202 @@
 .basket {
-  .popup__basket {
-    z-index: 5;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 310px;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-
-    &:target {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .popup__basket__body {
-
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
-      padding: 72px 0 0;
-
-      .popup__basket__content {
+    .popup__basket {
+        z-index: 5;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 310px;
         height: 100%;
-        background-color: #E5E5E5;
-        color: black;
-        max-width: 310px;
-        padding: 20px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 21px;
-
-        h1 {
-          font-weight: bold;
-          font-size: 16px;
-          text-transform: uppercase;
-          margin-bottom: 11px;
+        opacity: 0;
+        visibility: hidden;
+        &:target {
+            opacity: 1;
+            visibility: visible;
         }
-
-        .summ {
-          display: flex;
-          width: 100%;
-          justify-content: space-between;
-          div {
-            p {
-              font-size: 16px;
-              margin-bottom: 11px;
-            }
-            span {
-              width: 33px;
-            }
-          }
-
-        }
-
-        .zakaz {
-          display: flex;
-          width: 100%;
-          justify-content: space-between;
-
-          .zakaz__name {
+        .popup__basket__body {
             display: flex;
-            flex-wrap: wrap;
-            width: 87px;
-
-            span {
-              width: 100%;
-            }
-          }
-
-          .zakaz__piece {
-            display: flex;
-            flex-wrap: wrap;
-            width: 29px;
-
-          }
-
-          .zakaz__cost {
-            display: flex;
-            flex-wrap: wrap;
-            width: 33px;
-          }
-        }
-
-        input {
-          width: 270px;
-          border: none;
-        }
-
-        button {
-          border: none;
-          width: 115px;
-          border-radius: 45px;
-          background-color: black;
-          height: 24px;
-          color: #ffffff;
-          font-size: 10px;
-        }
-
-        span {
-          font-weight: lighter;
-          font-size: 12px;
-        }
-
-        .adress {
-          display: flex;
-          flex-wrap: wrap;
-          column-gap: 5%;
-
-          .atribute {
-            display: flex;
-            flex-direction: column;
-            width: 20%;
-
-            input {
-              margin-top: 8px;
-              width: 100%;
-            }
-          }
-        }
-
-        .comments, .name, .number, .street, {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .time, .pay {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-
-          span {
-            width: 100%;
-            margin-bottom: 10px;
-          }
-
-          p {
-            width: 40%;
-            font-size: 12px;
-          }
-
-          input {
-            width: 10%;
-          }
-
-
-        }
-
-        .end {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-
-
-        .popup__basket__close {
-          position: absolute;
-          right: 10px;
-          top: 10px;
-          color: white;
-          text-decoration: none;
-          width: 18px;
-          height: 18px;
-          font-size: 16px;
-          border-radius: 45%;
-        }
-
-        .popup__basket__card {
-          height: 210px;
-          width: 160px;
-          background-color: white;
-          border-radius: 15px;
-          overflow: hidden;
-          margin: 0 auto;
-
-          .popup__basket__card-img {
-            height: 135px;
-            background-position: center;
-            background-size: cover;
-          }
-
-          .popup__basket__card-inform {
-            position: absolute;
-
-            h4 {
-              margin-top: 5px;
-              margin-left: 4px;
-              font-size: 15px;
-              position: relative;
-            }
-
-            .popup__basket__card-price {
-              margin: 15px 5px;
-              display: flex;
-              justify-content: space-between;
-              position: relative;
-
-              .popup__basket__card-button {
-                background-color: #ad0202;
-                height: 22px;
-                width: 95px;
-                margin-left: 10px;
-                border: none;
-                outline: none;
-                border-radius: 12px;
-                cursor: pointer;
-
-                .popup__basket__card-basket {
-                  font-family: Roboto;
-                  font-style: normal;
-                  font-weight: 500;
-                  font-size: 15px;
-                  align-items: center;
-                  text-align: center;
-                  color: white;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 72px 0 0;
+            .popup__basket__content {
+                height: 100%;
+                background-color: #E5E5E5;
+                color: black;
+                max-width: 310px;
+                padding: 20px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 21px;
+                h1 {
+                    font-weight: bold;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    margin-bottom: 11px;
                 }
-              }
+                .summ {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    div {
+                        p {
+                            font-size: 16px;
+                            margin-bottom: 11px;
+                        }
+                        span {
+                            width: 33px;
+                        }
+                    }
+                }
+                .zakaz {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    .zakaz__name {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 87px;
+                        span {
+                            width: 100%;
+                        }
+                    }
+                    .zakaz__piece {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 29px;
+                    }
+                    .zakaz__cost {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 33px;
+                    }
+                }
+                input {
+                    width: 270px;
+                    border: none;
+                }
+                button {
+                    border: none;
+                    width: 115px;
+                    border-radius: 45px;
+                    background-color: black;
+                    height: 24px;
+                    color: #ffffff;
+                    font-size: 10px;
+                    &:active {
+                        background-color: rgb(119, 119, 119);
+                        color: #fff;
+                    }
+                }
+                span {
+                    font-weight: lighter;
+                    font-size: 12px;
+                }
+                .adress {
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 5%;
+                    .atribute {
+                        display: flex;
+                        flex-direction: column;
+                        width: 20%;
+                        input {
+                            margin-top: 8px;
+                            width: 100%;
+                        }
+                    }
+                }
+                .comments,
+                .name,
+                .number,
+                .street {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                .time,
+                .pay {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    span {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                    p {
+                        width: 40%;
+                        font-size: 12px;
+                    }
+                    input {
+                        width: 10%;
+                    }
+                }
+                .end {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+                .popup__basket__close {
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    color: white;
+                    text-decoration: none;
+                    width: 18px;
+                    height: 18px;
+                    font-size: 16px;
+                    border-radius: 45%;
+                }
+                .popup__basket__card {
+                    height: 210px;
+                    width: 160px;
+                    background-color: white;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    .popup__basket__card-img {
+                        height: 135px;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    .popup__basket__card-inform {
+                        position: absolute;
+                        h4 {
+                            margin-top: 5px;
+                            margin-left: 4px;
+                            font-size: 15px;
+                            position: relative;
+                        }
+                        .popup__basket__card-price {
+                            margin: 15px 5px;
+                            display: flex;
+                            justify-content: space-between;
+                            position: relative;
+                            .popup__basket__card-button {
+                                background-color: #ad0202;
+                                height: 22px;
+                                width: 95px;
+                                margin-left: 10px;
+                                border: none;
+                                outline: none;
+                                border-radius: 12px;
+                                cursor: pointer;
+                                .popup__basket__card-basket {
+                                    font-family: Roboto;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 15px;
+                                    align-items: center;
+                                    text-align: center;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 }

@@ -15,18 +15,23 @@ function updateRestaurants(restaurant) {
     })
 }
 
+const logo = document.querySelector('.logo');
+logo.style.cursor = 'pointer';
+logo.addEventListener('click', () => {
+    deleteRestaraunts();
+    getRestaurants()
+        .then((data) => {
+            addRestaurant(data);
+            return data;
+        })
+})
+
 getRestaurants()
     .then((data) => {
         addRestaurant(data);
         return data;
     })
     .then((data) => {
-        const logo = document.querySelector('.logo');
-        logo.style.cursor = 'pointer';
-        logo.addEventListener('click', () => {
-            deleteRestaraunts();
-            addRestaurant(data)
-        })
         let btnSort = document.querySelector('.sorting button');
         btnSort.addEventListener('click', () => {
             deleteRestaraunts();
@@ -71,30 +76,27 @@ let search_input = document.querySelector('.searsh__input');
 
 function search() {
     search_input.addEventListener('keydown', (e) => {
-            if (e.keyCode === 13) {
+        if (e.keyCode === 13) {
+            fetch(`${url}?name=${search_input.value}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        alert('Таких ресторанов не найдено!');
+                        search_input.value = '';
 
-
-                fetch(`${url}?name=${search_input.value}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data)
-                        if (data.length===0){
-                            alert('Таких ресторанов не найдено!')
-                        }
-                        else {
-                            deleteRestaraunts();
-                            addRestaurant(data)
-                            let cardItem = document.querySelectorAll('.cards-item');
-                            cardItem.forEach(item => {
-                                    item.style.maxWidth = `${480}px`;
-                                }
-                            )
-                        }
-                    })
-            }
-
+                    } else {
+                        deleteRestaraunts();
+                        addRestaurant(data)
+                        let cardItem = document.querySelectorAll('.cards-item');
+                        cardItem.forEach(item => {
+                            item.style.maxWidth = `${480}px`;
+                            search_input.value = '';
+                        })
+                    }
+                })
         }
-    )
+
+    })
 }
 
 search();
@@ -112,7 +114,6 @@ function addRestaurant(arr) {
                 document.getElementById('popup').style.display = "block";
                 document.getElementById('popup').style.opacity = "1";
                 document.getElementById('popup').style.visibility = "visible";
-
                 let url = 'http://localhost:3000/food';
                 fetch(url)
                     .then(response => response.json())
@@ -174,7 +175,6 @@ function addRestaurant(arr) {
             popup_content.innerHTML = "";
         }
     })
-
 
     function getCards() {
         const cards = document.querySelector('.cards .container');

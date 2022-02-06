@@ -34,6 +34,7 @@
                 font-size: 20px;
                 color: black;
                 text-decoration: none;
+                cursor: pointer;
             }
             .popup__content_cards {
                 background-color: #E5E5E5;
@@ -76,6 +77,13 @@
                             display: flex;
                             justify-content: space-between;
                             position: relative;
+                            span {
+                                font-family: Roboto;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 13px;
+                                line-height: 15px;
+                            }
                             .popup__card-button {
                                 background-color: #41E219;
                                 height: 22px;
@@ -89,11 +97,14 @@
                                     transition: .3s;
                                     transform: scale(1.05);
                                 }
+                                &:active {
+                                    background-color: #43b148;
+                                }
                                 .popup__card-basket {
                                     font-family: Roboto;
                                     font-style: normal;
                                     font-weight: 500;
-                                    font-size: 15px;
+                                    font-size: 14px;
                                     align-items: center;
                                     text-align: center;
                                     color: white;
